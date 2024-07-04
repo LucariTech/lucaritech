@@ -1,513 +1,1675 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Handsome Aware Coyote</title>
-    <meta property="og:title" content="Handsome Aware Coyote" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
 
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
+<head>
+  <!--====== Required meta tags ======-->
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-theme-neutral-dark);
-        background-color: var(--dl-color-theme-neutral-light);
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
 
-        fill: var(--dl-color-theme-neutral-dark);
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
-  </head>
-  <body>
-    <link rel="stylesheet" href="./style.css" />
-    <div>
-      <link href="./index.css" rel="stylesheet" />
+  <!--====== Title ======-->
+  <title>Business | Bootstrap 5 Business Template</title>
 
-      <div class="home-container">
-        <header class="navbar3-container">
-          <header data-thq="thq-navbar" class="navbar3-navbar-interactive">
-            <img
-              alt="IT Services Company"
-              src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/fac575ac-7a41-484f-b7ac-875042de11f8?org_if_sml=1&amp;force_format=original"
-              class="navbar3-image1"
-            />
-            <div data-thq="thq-navbar-nav" class="navbar3-desktop-menu">
-              <nav class="navbar3-links">
-                <span class="thq-link thq-body-small"><span>Home</span></span>
-                <span class="thq-link thq-body-small">
-                  <span>Services</span>
-                </span>
-                <span class="thq-link thq-body-small">
-                  <span>About Us</span>
-                </span>
-                <span class="thq-link thq-body-small">
-                  <span>Contact</span>
-                </span>
-                <span class="thq-link thq-body-small"><span>Link5</span></span>
-              </nav>
-              <div class="navbar3-icon-group">
-                <svg
-                  viewBox="0 0 950.8571428571428 1024"
-                  class="thq-icon-x-small"
-                >
-                  <path
-                    d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
-                  ></path></svg
-                ><svg
-                  viewBox="0 0 877.7142857142857 1024"
-                  class="thq-icon-x-small"
-                >
-                  <path
-                    d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
-                  ></path></svg
-                ><svg
-                  viewBox="0 0 602.2582857142856 1024"
-                  class="thq-icon-x-small"
-                >
-                  <path
-                    d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
-                  ></path>
-                </svg>
-              </div>
+  <!--====== Favicon Icon ======-->
+  <link rel="shortcut icon" href="../assets/images/favicon.svg" type="image/svg" />
+
+  <!--====== Bootstrap css ======-->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
+  <!--====== Line Icons css ======-->
+  <link rel="stylesheet" href="assets/css/lineicons.css" />
+
+  <!--====== Tiny Slider css ======-->
+  <link rel="stylesheet" href="assets/css/tiny-slider.css" />
+
+  <!--====== gLightBox css ======-->
+  <link rel="stylesheet" href="assets/css/glightbox.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!--====== NAVBAR NINE PART START ======-->
+
+  <section class="navbar-area navbar-nine">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">
+              <img src="assets/images/white-logo.svg" alt="Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine"
+              aria-controls="navbarNine" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse sub-menu-bar" id="navbarNine">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="page-scroll active" href="#hero-area">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="#pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                  <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+              </ul>
             </div>
-            <div data-thq="thq-burger-menu" class="navbar3-burger-menu">
-              <svg viewBox="0 0 1024 1024" class="navbar3-icon06">
-                <path
-                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                ></path>
-              </svg>
+
+            <div class="navbar-btn d-none d-lg-inline-block">
+              <a class="menu-bar" href="#side-menu-left"><i class="lni lni-menu"></i></a>
             </div>
-            <div data-thq="thq-mobile-menu" class="navbar3-mobile-menu">
-              <div class="navbar3-nav">
-                <div class="navbar3-top">
-                  <img
-                    alt="IT Services Company"
-                    src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/fac575ac-7a41-484f-b7ac-875042de11f8?org_if_sml=1&amp;force_format=original"
-                    class="navbar3-logo"
-                  />
-                  <div data-thq="thq-close-menu" class="navbar3-close-menu">
-                    <svg viewBox="0 0 1024 1024" class="navbar3-icon08">
-                      <path
-                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-                <nav class="navbar3-links1">
-                  <span class="thq-link thq-body-small"><span>Home</span></span>
-                  <span class="thq-link thq-body-small">
-                    <span>Services</span>
-                  </span>
-                  <span class="thq-link thq-body-small">
-                    <span>About Us</span>
-                  </span>
-                  <span class="thq-link thq-body-small">
-                    <span>Contact</span>
-                  </span>
-                  <span class="thq-link thq-body-small">
-                    <span>Link5</span>
-                  </span>
-                </nav>
-              </div>
-              <div class="navbar3-icon-group1">
-                <svg
-                  viewBox="0 0 950.8571428571428 1024"
-                  class="thq-icon-small"
-                >
-                  <path
-                    d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
-                  ></path></svg
-                ><svg
-                  viewBox="0 0 877.7142857142857 1024"
-                  class="thq-icon-small"
-                >
-                  <path
-                    d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
-                  ></path></svg
-                ><svg
-                  viewBox="0 0 602.2582857142856 1024"
-                  class="thq-icon-small"
-                >
-                  <path
-                    d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-          </header>
-        </header>
-        <div class="hero14-container thq-section-padding">
-          <div class="hero14-max-width thq-section-max-width">
-            <div class="hero14-column">
-              <div class="hero14-content">
-                <h1 class="hero14-text thq-heading-1">
-                  <span>Professional IT Services for Your Business</span>
-                </h1>
-                <p class="hero14-text1 thq-body-large">
-                  <span>
-                    We offer a wide range of IT services to help your business
-                    succeed in the digital world. From network security to cloud
-                    solutions, we have you covered.
-                  </span>
-                </p>
-                <div class="hero14-actions">
-                  <button class="thq-button-filled hero14-button">
-                    <span class="thq-body-small"><span>Learn More</span></span>
-                  </button>
-                  <button class="thq-button-outline hero14-button1">
-                    <span class="thq-body-small"><span>Get Started</span></span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <video
-              src="https://videos.pexels.com/video-files/7535099/7535099-hd_1280_720_25fps.mp4"
-              loop="true"
-              muted="true"
-              poster="https://images.pexels.com/videos/7535099/pictures/preview-0.jpg"
-              autoplay="true"
-              class="hero14-video thq-img-ratio-4-3"
-            ></video>
-          </div>
+          </nav>
+          <!-- navbar -->
         </div>
-        <div class="features23-layout349 thq-section-padding">
-          <div class="features23-max-width thq-section-max-width">
-            <div class="features23-container">
-              <h2 class="thq-heading-2"><span>Our Features</span></h2>
-              <span class="features23-text01 thq-body-small">
-                <span>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse varius enim in eros elementum tristique. Duis
-                  cursus, mi quis viverra ornare, eros dolor interdum nulla.
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </section>
+
+  <!--====== NAVBAR NINE PART ENDS ======-->
+
+  <!--====== SIDEBAR PART START ======-->
+
+  <div class="sidebar-left">
+    <div class="sidebar-close">
+      <a class="close" href="#close"><i class="lni lni-close"></i></a>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-logo">
+        <a href="index.html"><img src="assets/images/logo.svg" alt="Logo" /></a>
+      </div>
+      <p class="text">Lorem ipsum dolor sit amet adipisicing elit. Sapiente fuga nisi rerum iusto intro.</p>
+      <!-- logo -->
+      <div class="sidebar-menu">
+        <h5 class="menu-title">Quick Links</h5>
+        <ul>
+          <li><a href="javascript:void(0)">About Us</a></li>
+          <li><a href="javascript:void(0)">Our Team</a></li>
+          <li><a href="javascript:void(0)">Latest News</a></li>
+          <li><a href="javascript:void(0)">Contact Us</a></li>
+        </ul>
+      </div>
+      <!-- menu -->
+      <div class="sidebar-social align-items-center justify-content-center">
+        <h5 class="social-title">Follow Us On</h5>
+        <ul>
+          <li>
+            <a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a>
+          </li>
+          <li>
+            <a href="javascript:void(0)"><i class="lni lni-youtube"></i></a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar social -->
+    </div>
+    <!-- content -->
+  </div>
+  <div class="overlay-left"></div>
+
+  <!--====== SIDEBAR PART ENDS ======-->
+
+  <!-- Start header Area -->
+  <section id="hero-area" class="header-area header-eight">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="header-content">
+            <h1>Corporate & Business Site Template by Ayro UI.</h1>
+            <p>
+              We are a digital agency that helps brands to achieve their
+              business outcomes. We see technology as a tool to create amazing
+              things.
+            </p>
+            <div class="button">
+              <a href="javascript:void(0)" class="btn primary-btn">Get Started</a>
+              <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
+                class="glightbox video-button">
+                <span class="btn icon-btn rounded-full">
+                  <i class="lni lni-play"></i>
                 </span>
-              </span>
-              <button class="thq-button-filled features23-button">
-                <span class="thq-body-small"><span>Main action</span></span>
-              </button>
-            </div>
-            <div class="thq-grid-3">
-              <div class="features23-container2 thq-card">
-                <img
-                  alt="Managed IT Services Image"
-                  src="https://images.unsplash.com/photo-1680458841796-360a4cf4b3b1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxOTI5NjEyM3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="features23-image thq-img-round"
-                />
-                <h2 class="thq-heading-2"><span>Managed IT Services</span></h2>
-                <span class="features23-text03 thq-body-small">
-                  <span>
-                    Proactive monitoring and maintenance to keep your systems
-                    running smoothly.
-                  </span>
-                </span>
-              </div>
-              <div class="features23-container3 thq-card">
-                <img
-                  alt="Cybersecurity Solutions Image"
-                  src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxOTI5NjEyMnw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="features23-image1 thq-img-round"
-                />
-                <h2 class="thq-heading-2">
-                  <span>Cybersecurity Solutions</span>
-                </h2>
-                <span class="features23-text05 thq-body-small">
-                  <span>
-                    Protect your data and network from cyber threats with our
-                    advanced security solutions.
-                  </span>
-                </span>
-              </div>
-              <div class="features23-container4 thq-card">
-                <img
-                  alt="Cloud Computing Image"
-                  src="https://images.unsplash.com/photo-1580130732455-6663b4ce9f6e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxOTI5NjEyM3w&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="features23-image2 thq-img-round"
-                />
-                <h2 class="thq-heading-2"><span>Cloud Computing</span></h2>
-                <span class="features23-text07 thq-body-small">
-                  <span>
-                    Maximize efficiency and flexibility with our cloud computing
-                    services.
-                  </span>
-                </span>
-              </div>
-              <div class="features23-container5 thq-card">
-                <img
-                  alt="Cybersecurity Solutions Icon"
-                  src="https://images.unsplash.com/photo-1600267165477-6d4cc741b379?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxOTI5NjMyMHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="features23-image3 thq-img-round"
-                />
-                <h2 class="thq-heading-2">
-                  <span>Cybersecurity Solutions</span>
-                </h2>
-                <span class="features23-text09 thq-body-small">
-                  <span>
-                    Stay ahead of cyber threats with our cutting-edge
-                    cybersecurity solutions.
-                  </span>
-                </span>
-              </div>
-              <div class="features23-container6 thq-card">
-                <img
-                  alt="Cloud Computing Icon"
-                  src="https://images.unsplash.com/photo-1517504734587-2890819debab?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxOTI5NjMyMHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="features23-image4 thq-img-round"
-                />
-                <h2 class="thq-heading-2"><span>Cloud Computing</span></h2>
-                <span class="features23-text11 thq-body-small">
-                  <span>
-                    Harness the power of cloud computing for enhanced
-                    productivity and scalability.
-                  </span>
-                </span>
-              </div>
-              <div class="features23-container7 thq-card">
-                <img
-                  alt="Feature 1"
-                  src="https://images.unsplash.com/photo-1711397817812-f65474247a19?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTcxOTI5NjMyMHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="features23-image5 thq-img-round"
-                />
-                <h2 class="thq-heading-2"><span>Feature 6</span></h2>
-                <span class="features23-text13 thq-body-small">
-                  <span>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse varius enim in eros elementum tristique. Duis
-                    cursus, mi quis viverra ornare, eros dolor interdum nulla.
-                  </span>
-                </span>
-              </div>
+                <span class="text">Watch Intro</span>
+              </a>
             </div>
           </div>
         </div>
-        <div class="contact1-contact20 thq-section-padding">
-          <div class="contact1-max-width thq-section-max-width">
-            <div class="contact1-content">
-              <svg viewBox="0 0 1024 1024" class="thq-icon-medium">
-                <path
-                  d="M854 342v-86l-342 214-342-214v86l342 212zM854 170q34 0 59 26t25 60v512q0 34-25 60t-59 26h-684q-34 0-59-26t-25-60v-512q0-34 25-60t59-26h684z"
-                ></path>
-              </svg>
-              <div class="contact1-contact-info">
-                <div class="contact1-content1">
-                  <h3 class="contact1-text thq-heading-3">Email</h3>
-                  <p class="contact1-text1 thq-body-large">
-                    <span>
-                      Get in touch with us for any inquiries or to request our
-                      services.
-                    </span>
-                  </p>
-                </div>
-                <span class="contact1-email thq-body-small">
-                  <span>info@itservices.com</span>
-                </span>
-              </div>
-            </div>
-            <div class="contact1-content2">
-              <svg viewBox="0 0 1024 1024" class="thq-icon-medium">
-                <path
-                  d="M282 460q96 186 282 282l94-94q20-20 44-10 72 24 152 24 18 0 30 12t12 30v150q0 18-12 30t-30 12q-300 0-513-213t-213-513q0-18 12-30t30-12h150q18 0 30 12t12 30q0 80 24 152 8 26-10 44z"
-                ></path>
-              </svg>
-              <div class="contact1-contact-info1">
-                <div class="contact1-content3">
-                  <h3 class="contact1-text2 thq-heading-3">Phone</h3>
-                  <p class="contact1-text3 thq-body-large">
-                    <span>
-                      Our team is ready to assist you with any IT-related needs.
-                    </span>
-                  </p>
-                </div>
-                <span class="contact1-phone thq-body-small">
-                  <span>+123-456-7890</span>
-                </span>
-              </div>
-            </div>
-            <div class="contact1-content4">
-              <svg viewBox="0 0 1024 1024" class="thq-icon-medium">
-                <path
-                  d="M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 512c-106.040 0-192-85.96-192-192s85.96-192 192-192 192 85.96 192 192-85.96 192-192 192z"
-                ></path>
-              </svg>
-              <div class="contact1-contact-info2">
-                <div class="contact1-content5">
-                  <h3 class="contact1-text4 thq-heading-3">Office</h3>
-                  <p class="contact1-text5 thq-body-large">
-                    <span>
-                      Fill out the form below and we will get back to you as
-                      soon as possible.
-                    </span>
-                  </p>
-                </div>
-                <span class="contact1-address thq-body-small">
-                  <span>123 Main Street, City, Country</span>
-                </span>
-              </div>
-            </div>
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="header-image">
+            <img src="assets/images/header/hero-image.jpg" alt="#" />
           </div>
         </div>
-        <footer class="footer14-container thq-section-padding">
-          <div class="footer14-max-width thq-section-max-width">
-            <div class="thq-divider-horizontal"></div>
-            <div class="footer14-content">
-              <img
-                alt="IT Services Logo"
-                src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
-                class="footer14-image1"
-              />
-              <div class="footer14-actions">
-                <div class="footer14-newsletter">
-                  <span class="thq-body-small">
-                    <span>
-                      Contact us for a consultation on how our IT services can
-                      benefit your business.
-                    </span>
-                  </span>
-                  <div class="footer14-actions1">
-                    <div class="footer14-form">
-                      <div class="footer14-container1">
-                        <input
-                          type="email"
-                          placeholder="Enter your email"
-                          class="footer14-text-input thq-input"
-                        />
-                      </div>
-                      <button class="thq-button-outline footer14-button">
-                        <span class="thq-body-small">
-                          <span>/contact</span>
-                        </span>
-                      </button>
-                    </div>
-                    <span class="footer14-content2 thq-body-small">
-                      <span>
-                        Stay connected with us on social media for updates and
-                        news.
-                      </span>
-                    </span>
-                  </div>
-                </div>
-                <div class="footer14-links">
-                  <div class="footer14-column1">
-                    <strong class="thq-body-large footer14-column1-title">
-                      <span>Services</span>
-                    </strong>
-                    <div class="footer14-footer-links">
-                      <span class="thq-body-small">
-                        <span>Managed IT Services</span>
-                      </span>
-                      <span class="thq-body-small">
-                        <span>Cybersecurity Solutions</span>
-                      </span>
-                      <span class="thq-body-small">
-                        <span>Cloud Computing</span>
-                      </span>
-                      <span class="thq-body-small">
-                        <span>Network Infrastructure</span>
-                      </span>
-                      <span class="thq-body-small">
-                        <span>Email Hosting</span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="footer14-column2">
-                    <strong class="footer14-column2-title thq-body-large">
-                      <span>Contact Us</span>
-                    </strong>
-                    <div class="footer14-footer-links1">
-                      <span class="thq-body-small">
-                        <span>Phone Systems</span>
-                      </span>
-                      <span class="thq-body-small">
-                        <span>info@example.com</span>
-                      </span>
-                      <span class="thq-body-small">
-                        <span>+123-456-7890</span>
-                      </span>
-                      <span class="thq-body-small">
-                        <span>Privacy Policy</span>
-                      </span>
-                      <span class="thq-body-small">
-                        <span>Terms of Service</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="thq-divider-horizontal"></div>
-            <div class="footer14-social-links">
-              <svg viewBox="0 0 877.7142857142857 1024" class="thq-icon-small">
-                <path
-                  d="M713.143 73.143c90.857 0 164.571 73.714 164.571 164.571v548.571c0 90.857-73.714 164.571-164.571 164.571h-107.429v-340h113.714l17.143-132.571h-130.857v-84.571c0-38.286 10.286-64 65.714-64l69.714-0.571v-118.286c-12-1.714-53.714-5.143-101.714-5.143-101.143 0-170.857 61.714-170.857 174.857v97.714h-114.286v132.571h114.286v340h-304c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571z"
-                ></path></svg
-              ><svg viewBox="0 0 877.7142857142857 1024" class="thq-icon-small">
-                <path
-                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
-                ></path></svg
-              ><svg viewBox="0 0 950.8571428571428 1024" class="thq-icon-small">
-                <path
-                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
-                ></path></svg
-              ><svg viewBox="0 0 877.7142857142857 1024" class="thq-icon-small">
-                <path
-                  d="M135.429 808h132v-396.571h-132v396.571zM276 289.143c-0.571-38.857-28.571-68.571-73.714-68.571s-74.857 29.714-74.857 68.571c0 37.714 28.571 68.571 73.143 68.571h0.571c46.286 0 74.857-30.857 74.857-68.571zM610.286 808h132v-227.429c0-121.714-65.143-178.286-152-178.286-70.857 0-102.286 39.429-119.429 66.857h1.143v-57.714h-132s1.714 37.143 0 396.571v0h132v-221.714c0-11.429 0.571-23.429 4-32 9.714-23.429 31.429-48 68-48 47.429 0 66.286 36 66.286 89.714v212zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
-                ></path></svg
-              ><svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                <path
-                  d="M406.286 644.571l276.571-142.857-276.571-144.571v287.429zM512 152c215.429 0 358.286 10.286 358.286 10.286 20 2.286 64 2.286 102.857 43.429 0 0 31.429 30.857 40.571 101.714 10.857 82.857 10.286 165.714 10.286 165.714v77.714s0.571 82.857-10.286 165.714c-9.143 70.286-40.571 101.714-40.571 101.714-38.857 40.571-82.857 40.571-102.857 42.857 0 0-142.857 10.857-358.286 10.857v0c-266.286-2.286-348-10.286-348-10.286-22.857-4-74.286-2.857-113.143-43.429 0 0-31.429-31.429-40.571-101.714-10.857-82.857-10.286-165.714-10.286-165.714v-77.714s-0.571-82.857 10.286-165.714c9.143-70.857 40.571-101.714 40.571-101.714 38.857-41.143 82.857-41.143 102.857-43.429 0 0 142.857-10.286 358.286-10.286v0z"
-                ></path>
-              </svg>
-            </div>
-            <div class="footer14-credits">
-              <div class="footer14-credits1">
-                <span class="thq-body-small"><span>/privacy</span></span>
-                <span class="thq-body-small"><span>/terms</span></span>
-                <span class="thq-body-small"><span>/cookies</span></span>
-              </div>
-              <span class="footer14-content3 thq-body-small">
-                <span>© 2023 All rights reserved.</span>
-              </span>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
-    <script
-      defer=""
-      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
-    ></script>
-  </body>
+  </section>
+  <!-- End header Area -->
+
+  <!--====== ABOUT FIVE PART START ======-->
+
+  <section class="about-area about-five">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-12">
+          <div class="about-image-five">
+            <svg class="shape" width="106" height="134" viewBox="0 0 106 134" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="1.66654" cy="1.66679" r="1.66667" fill="#DADADA" />
+              <circle cx="1.66654" cy="16.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="1.66654" cy="31.0001" r="1.66667" fill="#DADADA" />
+              <circle cx="1.66654" cy="45.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="1.66654" cy="60.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="1.66654" cy="88.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="1.66654" cy="117.667" r="1.66667" fill="#DADADA" />
+              <circle cx="1.66654" cy="74.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="1.66654" cy="103" r="1.66667" fill="#DADADA" />
+              <circle cx="1.66654" cy="132" r="1.66667" fill="#DADADA" />
+              <circle cx="16.3333" cy="1.66679" r="1.66667" fill="#DADADA" />
+              <circle cx="16.3333" cy="16.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="16.3333" cy="31.0001" r="1.66667" fill="#DADADA" />
+              <circle cx="16.3333" cy="45.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="16.333" cy="60.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="16.333" cy="88.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="16.333" cy="117.667" r="1.66667" fill="#DADADA" />
+              <circle cx="16.333" cy="74.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="16.333" cy="103" r="1.66667" fill="#DADADA" />
+              <circle cx="16.333" cy="132" r="1.66667" fill="#DADADA" />
+              <circle cx="30.9998" cy="1.66679" r="1.66667" fill="#DADADA" />
+              <circle cx="74.6665" cy="1.66679" r="1.66667" fill="#DADADA" />
+              <circle cx="30.9998" cy="16.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="74.6665" cy="16.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="30.9998" cy="31.0001" r="1.66667" fill="#DADADA" />
+              <circle cx="74.6665" cy="31.0001" r="1.66667" fill="#DADADA" />
+              <circle cx="30.9998" cy="45.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="74.6665" cy="45.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="31" cy="60.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="74.6668" cy="60.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="31" cy="88.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="74.6668" cy="88.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="31" cy="117.667" r="1.66667" fill="#DADADA" />
+              <circle cx="74.6668" cy="117.667" r="1.66667" fill="#DADADA" />
+              <circle cx="31" cy="74.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="74.6668" cy="74.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="31" cy="103" r="1.66667" fill="#DADADA" />
+              <circle cx="74.6668" cy="103" r="1.66667" fill="#DADADA" />
+              <circle cx="31" cy="132" r="1.66667" fill="#DADADA" />
+              <circle cx="74.6668" cy="132" r="1.66667" fill="#DADADA" />
+              <circle cx="45.6665" cy="1.66679" r="1.66667" fill="#DADADA" />
+              <circle cx="89.3333" cy="1.66679" r="1.66667" fill="#DADADA" />
+              <circle cx="45.6665" cy="16.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="89.3333" cy="16.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="45.6665" cy="31.0001" r="1.66667" fill="#DADADA" />
+              <circle cx="89.3333" cy="31.0001" r="1.66667" fill="#DADADA" />
+              <circle cx="45.6665" cy="45.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="89.3333" cy="45.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="45.6665" cy="60.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="89.3333" cy="60.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="45.6665" cy="88.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="89.3333" cy="88.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="45.6665" cy="117.667" r="1.66667" fill="#DADADA" />
+              <circle cx="89.3333" cy="117.667" r="1.66667" fill="#DADADA" />
+              <circle cx="45.6665" cy="74.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="89.3333" cy="74.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="45.6665" cy="103" r="1.66667" fill="#DADADA" />
+              <circle cx="89.3333" cy="103" r="1.66667" fill="#DADADA" />
+              <circle cx="45.6665" cy="132" r="1.66667" fill="#DADADA" />
+              <circle cx="89.3333" cy="132" r="1.66667" fill="#DADADA" />
+              <circle cx="60.3333" cy="1.66679" r="1.66667" fill="#DADADA" />
+              <circle cx="104" cy="1.66679" r="1.66667" fill="#DADADA" />
+              <circle cx="60.3333" cy="16.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="104" cy="16.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="60.3333" cy="31.0001" r="1.66667" fill="#DADADA" />
+              <circle cx="104" cy="31.0001" r="1.66667" fill="#DADADA" />
+              <circle cx="60.3333" cy="45.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="104" cy="45.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="60.333" cy="60.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="104" cy="60.3335" r="1.66667" fill="#DADADA" />
+              <circle cx="60.333" cy="88.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="104" cy="88.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="60.333" cy="117.667" r="1.66667" fill="#DADADA" />
+              <circle cx="104" cy="117.667" r="1.66667" fill="#DADADA" />
+              <circle cx="60.333" cy="74.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="104" cy="74.6668" r="1.66667" fill="#DADADA" />
+              <circle cx="60.333" cy="103" r="1.66667" fill="#DADADA" />
+              <circle cx="104" cy="103" r="1.66667" fill="#DADADA" />
+              <circle cx="60.333" cy="132" r="1.66667" fill="#DADADA" />
+              <circle cx="104" cy="132" r="1.66667" fill="#DADADA" />
+            </svg>
+            <img src="assets/images/about/about-img1.jpg" alt="about" />
+          </div>
+        </div>
+        <div class="col-lg-6 col-12">
+          <div class="about-five-content">
+            <h6 class="small-title text-lg">OUR STORY</h6>
+            <h2 class="main-title fw-bold">Our team comes with the experience and knowledge</h2>
+            <div class="about-five-tab">
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-who-tab" data-bs-toggle="tab" data-bs-target="#nav-who"
+                    type="button" role="tab" aria-controls="nav-who" aria-selected="true">Who We Are</button>
+                  <button class="nav-link" id="nav-vision-tab" data-bs-toggle="tab" data-bs-target="#nav-vision"
+                    type="button" role="tab" aria-controls="nav-vision" aria-selected="false">our Vision</button>
+                  <button class="nav-link" id="nav-history-tab" data-bs-toggle="tab" data-bs-target="#nav-history"
+                    type="button" role="tab" aria-controls="nav-history" aria-selected="false">our History</button>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-who" role="tabpanel" aria-labelledby="nav-who-tab">
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                    when
+                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                    distribution of letters, look like readable English.</p>
+                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have in some
+                    form,
+                    by injected humour.</p>
+                </div>
+                <div class="tab-pane fade" id="nav-vision" role="tabpanel" aria-labelledby="nav-vision-tab">
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                    when
+                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                    distribution of letters, look like readable English.</p>
+                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have in some
+                    form,
+                    by injected humour.</p>
+                </div>
+                <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                    when
+                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                    distribution of letters, look like readable English.</p>
+                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have in some
+                    form,
+                    by injected humour.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- container -->
+  </section>
+
+  <!--====== ABOUT FIVE PART ENDS ======-->
+
+  <!-- ===== service-area start ===== -->
+  <section id="services" class="services-area services-eight">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>Services</h6>
+              <h2 class="fw-bold">Our Best Services</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="single-services">
+            <div class="service-icon">
+              <i class="lni lni-capsule"></i>
+            </div>
+            <div class="service-content">
+              <h4>Refreshing Design</h4>
+              <p>
+                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
+                eirmod tempor ividunt labor dolore magna.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-services">
+            <div class="service-icon">
+              <i class="lni lni-bootstrap"></i>
+            </div>
+            <div class="service-content">
+              <h4>Solid Bootstrap 5</h4>
+              <p>
+                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
+                eirmod tempor ividunt labor dolore magna.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-services">
+            <div class="service-icon">
+              <i class="lni lni-shortcode"></i>
+            </div>
+            <div class="service-content">
+              <h4>100+ Components</h4>
+              <p>
+                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
+                eirmod tempor ividunt labor dolore magna.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-services">
+            <div class="service-icon">
+              <i class="lni lni-dashboard"></i>
+            </div>
+            <div class="service-content">
+              <h4>Speed Optimized</h4>
+              <p>
+                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
+                eirmod tempor ividunt labor dolore magna.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-services">
+            <div class="service-icon">
+              <i class="lni lni-layers"></i>
+            </div>
+            <div class="service-content">
+              <h4>Fully Customizable</h4>
+              <p>
+                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
+                eirmod tempor ividunt labor dolore magna.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-services">
+            <div class="service-icon">
+              <i class="lni lni-reload"></i>
+            </div>
+            <div class="service-content">
+              <h4>Regular Updates</h4>
+              <p>
+                Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy
+                eirmod tempor ividunt labor dolore magna.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== service-area end ===== -->
+
+  <!--====== VIDEO ONE PART START ======-->
+
+  <section class="video-area video-one">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>Our Intro Video</h6>
+              <h2 class="fw-bold">Watch Our Promo Video</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
+    <div class="container">
+      <!-- row -->
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="video-content text-center">
+            <img src="assets/images/video/video-bg.png" alt="Video" />
+            <a class="video-popup glightbox" href="https://www.youtube.com/watch?v=NJbXptdalP0">
+              <i class="lni lni-play"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </section>
+
+  <!--====== VIDEO ONE PART ENDS ======-->
+
+  <!--====== portfolio THREE PART START ======-->
+
+  <section id="portfolio" class="portfolio-area portfolio-three">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>Our Portfolio</h6>
+              <h2 class="fw-bold">Our Recent Works</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="portfolio-menu text-center">
+            <button data-filter="all" class="active">ALL WORK</button>
+            <button data-filter="branding">BRANDING</button>
+            <button data-filter="marketing">MARKETING</button>
+            <button data-filter="planning">PLANNING</button>
+            <button data-filter="research">RESEARCH</button>
+          </div>
+          <!-- portfolio menu -->
+        </div>
+      </div>
+      <!-- row -->
+      <div class="row grid">
+        <div class="col-lg-4 col-sm-6 branding-3 planning-3" data-filter="branding">
+          <div class="portfolio-style-three">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/pf1.jpg" alt="image" />
+              <div class="
+                  portfolio-overlay
+                  d-flex
+                  align-items-center
+                  justify-content-center
+                ">
+                <div class="portfolio-content">
+                  <div class="portfolio-icon">
+                    <a class="image-popup-three glightbox3" href="assets/images/portfolio/pf1.jpg">
+                      <i class="lni lni-zoom-in"> </i>
+                    </a>
+                  </div>
+                  <div class="portfolio-icon">
+                    <a href="javascript:void(0)"> <i class="lni lni-link"> </i> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-text">
+              <h4 class="portfolio-title">
+                <a href="javascript:void(0)">Graphics Design</a>
+              </h4>
+              <p class="text">
+                Short description for the ones who look for something new.
+                Awesome!
+              </p>
+            </div>
+          </div>
+          <!-- single portfolio -->
+        </div>
+        <div class="col-lg-4 col-sm-6" data-filter="research">
+          <div class="portfolio-style-three">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/pf2.jpg" alt="image" />
+              <div class="
+                  portfolio-overlay
+                  d-flex
+                  align-items-center
+                  justify-content-center
+                ">
+                <div class="portfolio-content">
+                  <div class="portfolio-icon">
+                    <a class="image-popup-three glightbox3" href="assets/images/portfolio/pf2.jpg">
+                      <i class="lni lni-zoom-in"> </i>
+                    </a>
+                  </div>
+                  <div class="portfolio-icon">
+                    <a href="javascript:void(0)"> <i class="lni lni-link"> </i> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-text">
+              <h4 class="portfolio-title">
+                <a href="javascript:void(0)">Web Development</a>
+              </h4>
+              <p class="text">
+                Short description for the ones who look for something new.
+                Awesome!
+              </p>
+            </div>
+          </div>
+          <!-- single portfolio -->
+        </div>
+        <div class="col-lg-4 col-sm-6" data-filter="marketing">
+          <div class="portfolio-style-three">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/pf3.jpg" alt="image" />
+              <div class="
+                  portfolio-overlay
+                  d-flex
+                  align-items-center
+                  justify-content-center
+                ">
+                <div class="portfolio-content">
+                  <div class="portfolio-icon">
+                    <a class="image-popup-three glightbox3" href="assets/images/portfolio/pf3.jpg">
+                      <i class="lni lni-zoom-in"> </i>
+                    </a>
+                  </div>
+                  <div class="portfolio-icon">
+                    <a href="javascript:void(0)"> <i class="lni lni-link"> </i> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-text">
+              <h4 class="portfolio-title">
+                <a href="javascript:void(0)">App Development</a>
+              </h4>
+              <p class="text">
+                Short description for the ones who look for something new.
+                Awesome!
+              </p>
+            </div>
+          </div>
+          <!-- single portfolio -->
+        </div>
+        <div class="col-lg-4 col-sm-6" data-filter="planning">
+          <div class="portfolio-style-three">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/pf4.jpg" alt="image" />
+              <div class="
+                  portfolio-overlay
+                  d-flex
+                  align-items-center
+                  justify-content-center
+                ">
+                <div class="portfolio-content">
+                  <div class="portfolio-icon">
+                    <a class="image-popup-three glightbox3" href="assets/images/portfolio/pf4.jpg">
+                      <i class="lni lni-zoom-in"> </i>
+                    </a>
+                  </div>
+                  <div class="portfolio-icon">
+                    <a href="javascript:void(0)"> <i class="lni lni-link"> </i> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-text">
+              <h4 class="portfolio-title">
+                <a href="javascript:void(0)">Digital Marketing</a>
+              </h4>
+              <p class="text">
+                Short description for the ones who look for something new.
+                Awesome!
+              </p>
+            </div>
+          </div>
+          <!-- single portfolio -->
+        </div>
+        <div class="col-lg-4 col-sm-6" data-filter="branding">
+          <div class="portfolio-style-three">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/pf5.jpg" alt="image" />
+              <div class="
+                  portfolio-overlay
+                  d-flex
+                  align-items-center
+                  justify-content-center
+                ">
+                <div class="portfolio-content">
+                  <div class="portfolio-icon">
+                    <a class="image-popup-three glightbox3" href="assets/images/portfolio/pf5.jpg">
+                      <i class="lni lni-zoom-in"> </i>
+                    </a>
+                  </div>
+                  <div class="portfolio-icon">
+                    <a href="javascript:void(0)"> <i class="lni lni-link"> </i> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-text">
+              <h4 class="portfolio-title">
+                <a href="javascript:void(0)">SEO Services</a>
+              </h4>
+              <p class="text">
+                Short description for the ones who look for something new.
+                Awesome!
+              </p>
+            </div>
+          </div>
+          <!-- single portfolio -->
+        </div>
+        <div class="col-lg-4 col-sm-6" data-filter="marketing">
+          <div class="portfolio-style-three">
+            <div class="portfolio-image">
+              <img src="assets/images/portfolio/pf6.jpg" alt="image" />
+              <div class="
+                  portfolio-overlay
+                  d-flex
+                  align-items-center
+                  justify-content-center
+                ">
+                <div class="portfolio-content">
+                  <div class="portfolio-icon">
+                    <a class="image-popup-three glightbox3" href="assets/images/portfolio/pf6.jpg">
+                      <i class="lni lni-zoom-in"> </i>
+                    </a>
+                  </div>
+                  <div class="portfolio-icon">
+                    <a href="javascript:void(0)"> <i class="lni lni-link"> </i> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-text">
+              <h4 class="portfolio-title">
+                <a href="javascript:void(0)">Product Design</a>
+              </h4>
+              <p class="text">
+                Short description for the ones who look for something new.
+                Awesome!
+              </p>
+            </div>
+          </div>
+          <!-- single portfolio -->
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </section>
+
+  <!--====== portfolio THREE PART ENDS ======-->
+
+  <!-- Start Pricing  Area -->
+  <section id="pricing" class="pricing-area pricing-fourteen">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>Pricing</h6>
+              <h2 class="fw-bold">Pricing & Plans</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="pricing-style-fourteen">
+            <div class="table-head">
+              <h6 class="title">Starter</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
+                <div class="price">
+                  <h2 class="amount">
+                    <span class="currency">$</span>0<span class="duration">/mo </span>
+                  </h2>
+                </div>
+            </div>
+
+            <div class="light-rounded-buttons">
+              <a href="javascript:void(0)" class="btn primary-btn-outline">
+                Start free trial
+              </a>
+            </div>
+
+            <div class="table-content">
+              <ul class="table-list">
+                <li> <i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
+                <li> <i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
+                <li> <i class="lni lni-checkmark-circle deactive"></i> Morbi leo risus.</li>
+                <li> <i class="lni lni-checkmark-circle deactive"></i> Excepteur sint occaecat velit.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="pricing-style-fourteen middle">
+            <div class="table-head">
+              <h6 class="title">Exclusive</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
+                <div class="price">
+                  <h2 class="amount">
+                    <span class="currency">$</span>99<span class="duration">/mo </span>
+                  </h2>
+                </div>
+            </div>
+
+            <div class="light-rounded-buttons">
+              <a href="javascript:void(0)" class="btn primary-btn">
+                Start free trial
+              </a>
+            </div>
+
+            <div class="table-content">
+              <ul class="table-list">
+                <li> <i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
+                <li> <i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
+                <li> <i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
+                <li> <i class="lni lni-checkmark-circle deactive"></i> Excepteur sint occaecat velit.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="pricing-style-fourteen">
+            <div class="table-head">
+              <h6 class="title">Premium</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and industry.</p>
+                <div class="price">
+                  <h2 class="amount">
+                    <span class="currency">$</span>150<span class="duration">/mo </span>
+                  </h2>
+                </div>
+            </div>
+
+            <div class="light-rounded-buttons">
+              <a href="javascript:void(0)" class="btn primary-btn-outline">
+                Start free trial
+              </a>
+            </div>
+
+            <div class="table-content">
+              <ul class="table-list">
+                <li> <i class="lni lni-checkmark-circle"></i> Cras justo odio.</li>
+                <li> <i class="lni lni-checkmark-circle"></i> Dapibus ac facilisis in.</li>
+                <li> <i class="lni lni-checkmark-circle"></i> Morbi leo risus.</li>
+                <li> <i class="lni lni-checkmark-circle"></i> Excepteur sint occaecat velit.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ End Pricing  Area -->
+
+  <!--====== TEAM STYLE SIX START ======-->
+
+  <section id="team" class="team-area">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>Our Team</h6>
+              <h2 class="fw-bold">Our Creative Team</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <div class="team-style-six text-center">
+            <div class="team-image">
+              <img src="assets/images/team/team-1.jpg" alt="Team" />
+            </div>
+            <div class="team-content">
+              <div class="team-social">
+                <ul class="social">
+                  <li>
+                    <a href="javascript:void(0)"> <i class="lni lni-facebook-filled"></i> </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <i class="lni lni-twitter-original"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <i class="lni lni-linkedin-original"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> <i class="lni lni-pinterest"></i> </a>
+                  </li>
+                </ul>
+              </div>
+              <h4 class="team-name">Jeffery Riley</h4>
+              <span class="sub-title">Art Director</span>
+            </div>
+          </div>
+          <!-- single team -->
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="team-style-six text-center">
+            <div class="team-image">
+              <img src="assets/images/team/team-2.jpg" alt="Team" />
+            </div>
+            <div class="team-content">
+              <div class="team-social">
+                <ul class="social">
+                  <li>
+                    <a href="javascript:void(0)"> <i class="lni lni-facebook-filled"></i> </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <i class="lni lni-twitter-original"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <i class="lni lni-linkedin-original"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> <i class="lni lni-pinterest"></i> </a>
+                  </li>
+                </ul>
+              </div>
+              <h4 class="team-name">Riley Beata</h4>
+              <span class="sub-title">Web Developer</span>
+            </div>
+          </div>
+          <!-- single team -->
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="team-style-six text-center">
+            <div class="team-image">
+              <img src="assets/images/team/team-3.jpg" alt="Team" />
+            </div>
+            <div class="team-content">
+              <div class="team-social">
+                <ul class="social">
+                  <li>
+                    <a href="javascript:void(0)"> <i class="lni lni-facebook-filled"></i> </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <i class="lni lni-twitter-original"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <i class="lni lni-linkedin-original"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> <i class="lni lni-pinterest"></i> </a>
+                  </li>
+                </ul>
+              </div>
+              <h4 class="team-name">Mark Alone</h4>
+              <span class="sub-title">UX Designer</span>
+            </div>
+          </div>
+          <!-- single team -->
+        </div>
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </section>
+
+  <!--====== TEAM STYLE SIX ENDS ======-->
+
+  <!-- Start Cta Area -->
+  <section id="call-action" class="call-action">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-9">
+          <div class="inner-content">
+            <h2>We love to make perfect <br />solutions for your business</h2>
+            <p>
+              Why I say old chap that is, spiffing off his nut cor blimey
+              guvnords geeza<br />
+              bloke knees up bobby, sloshed arse William cack Richard. Bloke
+              fanny around chesed of bum bag old lost the pilot say there
+              spiffing off his nut.
+            </p>
+            <div class="light-rounded-buttons">
+              <a href="javascript:void(0)" class="btn primary-btn-outline">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Cta Area -->
+
+  <!-- Start Testimonials Area -->
+  <section id="testimonial" class="testimonial-5">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>Customer Reviews</h6>
+              <h2 class="fw-bold">Our Testimonials</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Three ======-->
+    <div class="container">
+      <div class="row testimonial-slider">
+        <div class="col-lg-6 col-12">
+          <!-- Start Single Testimonial -->
+          <div class="single-testimonial">
+            <svg class="shape1" width="62" height="31" viewBox="0 0 62 31" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M-1.10459e-06 -3.51286e-06C-1.46049e-06 4.07097 0.801837 8.10209 2.35973 11.8632C3.91763 15.6243 6.20107 19.0417 9.07969 21.9203C11.9583 24.7989 15.3757 27.0824 19.1368 28.6403C22.8979 30.1982 26.929 31 31 31C35.071 31 39.1021 30.1982 42.8632 28.6403C46.6243 27.0824 50.0417 24.7989 52.9203 21.9203C55.7989 19.0417 58.0824 15.6243 59.6403 11.8632C61.1982 8.10209 62 4.07098 62 -8.02757e-07L31 -8.02758e-07L-1.10459e-06 -3.51286e-06Z"
+                fill="#FF8686" />
+            </svg>
+            <svg class="shape2" width="82" height="74" viewBox="0 0 82 74" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="45.0005" cy="37" r="37" fill="#FE9955" />
+              <path
+                d="M0.175359 2.73871C1.17682 4.85939 2.2739 6.88145 3.46802 8.90242C4.46524 10.732 5.46811 12.9497 6.94627 14.4811C7.73528 15.3431 9.37218 14.4457 8.96708 13.287C8.96708 13.287 8.96566 13.1899 8.86863 13.1913C9.05846 12.8974 9.2497 12.7003 9.53657 12.4052C9.63361 12.4037 9.82627 12.304 9.92331 12.3026C10.116 12.2027 10.3072 12.0059 10.4985 11.8088C15.7794 14.5465 21.0575 17.0902 25.9574 20.3188C27.4271 21.268 28.8012 22.3157 30.081 23.5587C25.1774 26.7359 19.5257 31.8654 20.6822 37.9632C22.255 45.996 30.8275 41.5036 33.678 37.2886C37.1963 32.2874 36.94 28.0206 33.4815 23.8005C36.7525 21.8117 40.4199 20.3993 44.0133 20.5412C52.6538 20.7066 54.2222 28.4483 52.0851 34.9823C49.548 34.0486 46.6328 33.7999 44.1182 34.4189C39.5716 35.4557 35.5978 42.5017 38.8594 46.5306C42.1196 50.4625 50.1618 42.8719 51.7762 40.422C52.2515 39.7356 52.7252 38.9523 53.1021 38.1703C53.2005 38.266 53.2977 38.2645 53.396 38.3602C60.4477 42.7221 54.5176 48.729 49.6083 51.5181C48.8377 51.9175 49.5325 52.975 50.3045 52.6726C55.415 50.3659 61.3648 45.7175 57.7824 39.6551C56.8879 38.2123 55.6081 36.9692 54.0428 36.1184C56.0998 30.7503 56.0094 24.5398 51.101 20.7292C45.211 16.1562 37.6845 19.1774 32.1017 22.3646C32.0032 22.2691 32.0032 22.2691 31.9048 22.1733C26.4872 16.7199 18.8689 13.4339 12.0254 10.0395C12.5007 9.3532 12.9746 8.56968 13.4499 7.88351C13.7339 7.39393 13.627 6.71609 13.2332 6.33375C9.89298 3.56774 5.88339 1.49089 1.50686 0.875232C0.435374 0.599667 -0.325372 1.67822 0.175359 2.73871ZM33.341 27.4905C35.5295 31.1468 32.9632 34.8724 30.4799 37.6262C27.2329 41.2646 21.8818 40.372 22.8688 34.8253C23.41 32.0028 25.9005 29.7342 27.9114 27.8608C28.9646 26.8749 30.2118 25.886 31.5576 24.9929C32.2483 25.7593 32.8433 26.6243 33.341 27.4905ZM51.1458 37.131C49.8256 39.7708 47.913 41.7398 45.5099 43.3277C44.4523 44.0226 43.2964 44.6217 42.0392 44.9312C38.7541 45.9496 40.3273 40.6856 40.9868 39.3172C42.9709 35.6001 47.6329 35.8234 51.1458 37.131ZM10.7274 7.53494C10.7288 7.63198 10.6318 7.63339 10.6332 7.73043C10.3421 7.73467 10.0538 7.93314 9.86536 8.32395C9.58414 9.00745 9.20589 9.69236 8.82764 10.3774C8.63781 10.6714 8.06407 11.2621 8.25814 11.2592C8.16111 11.2607 8.06548 11.3591 8.0669 11.4561C7.46913 10.3974 6.67729 9.34112 6.07953 8.28236C5.28345 6.93515 4.48596 5.4909 3.68846 4.0465C6.12426 4.69011 8.56855 5.91625 10.7274 7.53494Z"
+                fill="#7C451F" />
+            </svg>
+            <div class="inner-content">
+              <div class="qote-icon">
+                <i class="lni lni-quotation"></i>
+              </div>
+              <p class="text">
+                On the other hand denoun with righteous and disliks men who
+                are beguiled demorae momentc blinded by desire that can
+              </p>
+              <div class="author">
+                <div class="image">
+                  <img src="assets/images/testimonial/author-1.jpg" alt="Author" />
+                </div>
+                <h4 class="name">
+                  Musharof Chowdhury
+                  <span class="deg">Web Entrepreneur</span>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <!-- End Single Testimonial -->
+        </div>
+        <div class="col-lg-6 col-12">
+          <!-- Start Single Testimonial -->
+          <div class="single-testimonial">
+            <svg class="shape1" width="62" height="31" viewBox="0 0 62 31" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M-1.10459e-06 -3.51286e-06C-1.46049e-06 4.07097 0.801837 8.10209 2.35973 11.8632C3.91763 15.6243 6.20107 19.0417 9.07969 21.9203C11.9583 24.7989 15.3757 27.0824 19.1368 28.6403C22.8979 30.1982 26.929 31 31 31C35.071 31 39.1021 30.1982 42.8632 28.6403C46.6243 27.0824 50.0417 24.7989 52.9203 21.9203C55.7989 19.0417 58.0824 15.6243 59.6403 11.8632C61.1982 8.10209 62 4.07098 62 -8.02757e-07L31 -8.02758e-07L-1.10459e-06 -3.51286e-06Z"
+                fill="#FF8686" />
+            </svg>
+            <svg class="shape2" width="82" height="74" viewBox="0 0 82 74" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="45.0005" cy="37" r="37" fill="#FE9955" />
+              <path
+                d="M0.175359 2.73871C1.17682 4.85939 2.2739 6.88145 3.46802 8.90242C4.46524 10.732 5.46811 12.9497 6.94627 14.4811C7.73528 15.3431 9.37218 14.4457 8.96708 13.287C8.96708 13.287 8.96566 13.1899 8.86863 13.1913C9.05846 12.8974 9.2497 12.7003 9.53657 12.4052C9.63361 12.4037 9.82627 12.304 9.92331 12.3026C10.116 12.2027 10.3072 12.0059 10.4985 11.8088C15.7794 14.5465 21.0575 17.0902 25.9574 20.3188C27.4271 21.268 28.8012 22.3157 30.081 23.5587C25.1774 26.7359 19.5257 31.8654 20.6822 37.9632C22.255 45.996 30.8275 41.5036 33.678 37.2886C37.1963 32.2874 36.94 28.0206 33.4815 23.8005C36.7525 21.8117 40.4199 20.3993 44.0133 20.5412C52.6538 20.7066 54.2222 28.4483 52.0851 34.9823C49.548 34.0486 46.6328 33.7999 44.1182 34.4189C39.5716 35.4557 35.5978 42.5017 38.8594 46.5306C42.1196 50.4625 50.1618 42.8719 51.7762 40.422C52.2515 39.7356 52.7252 38.9523 53.1021 38.1703C53.2005 38.266 53.2977 38.2645 53.396 38.3602C60.4477 42.7221 54.5176 48.729 49.6083 51.5181C48.8377 51.9175 49.5325 52.975 50.3045 52.6726C55.415 50.3659 61.3648 45.7175 57.7824 39.6551C56.8879 38.2123 55.6081 36.9692 54.0428 36.1184C56.0998 30.7503 56.0094 24.5398 51.101 20.7292C45.211 16.1562 37.6845 19.1774 32.1017 22.3646C32.0032 22.2691 32.0032 22.2691 31.9048 22.1733C26.4872 16.7199 18.8689 13.4339 12.0254 10.0395C12.5007 9.3532 12.9746 8.56968 13.4499 7.88351C13.7339 7.39393 13.627 6.71609 13.2332 6.33375C9.89298 3.56774 5.88339 1.49089 1.50686 0.875232C0.435374 0.599667 -0.325372 1.67822 0.175359 2.73871ZM33.341 27.4905C35.5295 31.1468 32.9632 34.8724 30.4799 37.6262C27.2329 41.2646 21.8818 40.372 22.8688 34.8253C23.41 32.0028 25.9005 29.7342 27.9114 27.8608C28.9646 26.8749 30.2118 25.886 31.5576 24.9929C32.2483 25.7593 32.8433 26.6243 33.341 27.4905ZM51.1458 37.131C49.8256 39.7708 47.913 41.7398 45.5099 43.3277C44.4523 44.0226 43.2964 44.6217 42.0392 44.9312C38.7541 45.9496 40.3273 40.6856 40.9868 39.3172C42.9709 35.6001 47.6329 35.8234 51.1458 37.131ZM10.7274 7.53494C10.7288 7.63198 10.6318 7.63339 10.6332 7.73043C10.3421 7.73467 10.0538 7.93314 9.86536 8.32395C9.58414 9.00745 9.20589 9.69236 8.82764 10.3774C8.63781 10.6714 8.06407 11.2621 8.25814 11.2592C8.16111 11.2607 8.06548 11.3591 8.0669 11.4561C7.46913 10.3974 6.67729 9.34112 6.07953 8.28236C5.28345 6.93515 4.48596 5.4909 3.68846 4.0465C6.12426 4.69011 8.56855 5.91625 10.7274 7.53494Z"
+                fill="#7C451F" />
+            </svg>
+            <div class="inner-content">
+              <div class="qote-icon">
+                <i class="lni lni-quotation"></i>
+              </div>
+              <p class="text">
+                On the other hand denoun with righteous and disliks men who
+                are beguiled demorae momentc blinded by desire that can
+              </p>
+              <div class="author">
+                <div class="image">
+                  <img src="assets/images/testimonial/author-2.jpg" alt="Author" />
+                </div>
+                <h4 class="name">
+                  David Warner
+                  <span class="deg">Web Developer</span>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <!-- End Single Testimonial -->
+        </div>
+        <div class="col-lg-6 col-12">
+          <!-- Start Single Testimonial -->
+          <div class="single-testimonial">
+            <svg class="shape1" width="62" height="31" viewBox="0 0 62 31" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M-1.10459e-06 -3.51286e-06C-1.46049e-06 4.07097 0.801837 8.10209 2.35973 11.8632C3.91763 15.6243 6.20107 19.0417 9.07969 21.9203C11.9583 24.7989 15.3757 27.0824 19.1368 28.6403C22.8979 30.1982 26.929 31 31 31C35.071 31 39.1021 30.1982 42.8632 28.6403C46.6243 27.0824 50.0417 24.7989 52.9203 21.9203C55.7989 19.0417 58.0824 15.6243 59.6403 11.8632C61.1982 8.10209 62 4.07098 62 -8.02757e-07L31 -8.02758e-07L-1.10459e-06 -3.51286e-06Z"
+                fill="#FF8686" />
+            </svg>
+            <svg class="shape2" width="82" height="74" viewBox="0 0 82 74" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="45.0005" cy="37" r="37" fill="#FE9955" />
+              <path
+                d="M0.175359 2.73871C1.17682 4.85939 2.2739 6.88145 3.46802 8.90242C4.46524 10.732 5.46811 12.9497 6.94627 14.4811C7.73528 15.3431 9.37218 14.4457 8.96708 13.287C8.96708 13.287 8.96566 13.1899 8.86863 13.1913C9.05846 12.8974 9.2497 12.7003 9.53657 12.4052C9.63361 12.4037 9.82627 12.304 9.92331 12.3026C10.116 12.2027 10.3072 12.0059 10.4985 11.8088C15.7794 14.5465 21.0575 17.0902 25.9574 20.3188C27.4271 21.268 28.8012 22.3157 30.081 23.5587C25.1774 26.7359 19.5257 31.8654 20.6822 37.9632C22.255 45.996 30.8275 41.5036 33.678 37.2886C37.1963 32.2874 36.94 28.0206 33.4815 23.8005C36.7525 21.8117 40.4199 20.3993 44.0133 20.5412C52.6538 20.7066 54.2222 28.4483 52.0851 34.9823C49.548 34.0486 46.6328 33.7999 44.1182 34.4189C39.5716 35.4557 35.5978 42.5017 38.8594 46.5306C42.1196 50.4625 50.1618 42.8719 51.7762 40.422C52.2515 39.7356 52.7252 38.9523 53.1021 38.1703C53.2005 38.266 53.2977 38.2645 53.396 38.3602C60.4477 42.7221 54.5176 48.729 49.6083 51.5181C48.8377 51.9175 49.5325 52.975 50.3045 52.6726C55.415 50.3659 61.3648 45.7175 57.7824 39.6551C56.8879 38.2123 55.6081 36.9692 54.0428 36.1184C56.0998 30.7503 56.0094 24.5398 51.101 20.7292C45.211 16.1562 37.6845 19.1774 32.1017 22.3646C32.0032 22.2691 32.0032 22.2691 31.9048 22.1733C26.4872 16.7199 18.8689 13.4339 12.0254 10.0395C12.5007 9.3532 12.9746 8.56968 13.4499 7.88351C13.7339 7.39393 13.627 6.71609 13.2332 6.33375C9.89298 3.56774 5.88339 1.49089 1.50686 0.875232C0.435374 0.599667 -0.325372 1.67822 0.175359 2.73871ZM33.341 27.4905C35.5295 31.1468 32.9632 34.8724 30.4799 37.6262C27.2329 41.2646 21.8818 40.372 22.8688 34.8253C23.41 32.0028 25.9005 29.7342 27.9114 27.8608C28.9646 26.8749 30.2118 25.886 31.5576 24.9929C32.2483 25.7593 32.8433 26.6243 33.341 27.4905ZM51.1458 37.131C49.8256 39.7708 47.913 41.7398 45.5099 43.3277C44.4523 44.0226 43.2964 44.6217 42.0392 44.9312C38.7541 45.9496 40.3273 40.6856 40.9868 39.3172C42.9709 35.6001 47.6329 35.8234 51.1458 37.131ZM10.7274 7.53494C10.7288 7.63198 10.6318 7.63339 10.6332 7.73043C10.3421 7.73467 10.0538 7.93314 9.86536 8.32395C9.58414 9.00745 9.20589 9.69236 8.82764 10.3774C8.63781 10.6714 8.06407 11.2621 8.25814 11.2592C8.16111 11.2607 8.06548 11.3591 8.0669 11.4561C7.46913 10.3974 6.67729 9.34112 6.07953 8.28236C5.28345 6.93515 4.48596 5.4909 3.68846 4.0465C6.12426 4.69011 8.56855 5.91625 10.7274 7.53494Z"
+                fill="#7C451F" />
+            </svg>
+            <div class="inner-content">
+              <div class="qote-icon">
+                <i class="lni lni-quotation"></i>
+              </div>
+              <p class="text">
+                On the other hand denoun with righteous and disliks men who
+                are beguiled demorae momentc blinded by desire that can
+              </p>
+              <div class="author">
+                <div class="image">
+                  <img src="assets/images/testimonial/author-3.jpg" alt="Author" />
+                </div>
+                <h4 class="name">
+                  Jems Gilario
+                  <span class="deg">Graphics Designer</span>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <!-- End Single Testimonial -->
+        </div>
+        <div class="col-lg-6 col-12">
+          <!-- Start Single Testimonial -->
+          <div class="single-testimonial">
+            <svg class="shape1" width="62" height="31" viewBox="0 0 62 31" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M-1.10459e-06 -3.51286e-06C-1.46049e-06 4.07097 0.801837 8.10209 2.35973 11.8632C3.91763 15.6243 6.20107 19.0417 9.07969 21.9203C11.9583 24.7989 15.3757 27.0824 19.1368 28.6403C22.8979 30.1982 26.929 31 31 31C35.071 31 39.1021 30.1982 42.8632 28.6403C46.6243 27.0824 50.0417 24.7989 52.9203 21.9203C55.7989 19.0417 58.0824 15.6243 59.6403 11.8632C61.1982 8.10209 62 4.07098 62 -8.02757e-07L31 -8.02758e-07L-1.10459e-06 -3.51286e-06Z"
+                fill="#FF8686" />
+            </svg>
+            <svg class="shape2" width="82" height="74" viewBox="0 0 82 74" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="45.0005" cy="37" r="37" fill="#FE9955" />
+              <path
+                d="M0.175359 2.73871C1.17682 4.85939 2.2739 6.88145 3.46802 8.90242C4.46524 10.732 5.46811 12.9497 6.94627 14.4811C7.73528 15.3431 9.37218 14.4457 8.96708 13.287C8.96708 13.287 8.96566 13.1899 8.86863 13.1913C9.05846 12.8974 9.2497 12.7003 9.53657 12.4052C9.63361 12.4037 9.82627 12.304 9.92331 12.3026C10.116 12.2027 10.3072 12.0059 10.4985 11.8088C15.7794 14.5465 21.0575 17.0902 25.9574 20.3188C27.4271 21.268 28.8012 22.3157 30.081 23.5587C25.1774 26.7359 19.5257 31.8654 20.6822 37.9632C22.255 45.996 30.8275 41.5036 33.678 37.2886C37.1963 32.2874 36.94 28.0206 33.4815 23.8005C36.7525 21.8117 40.4199 20.3993 44.0133 20.5412C52.6538 20.7066 54.2222 28.4483 52.0851 34.9823C49.548 34.0486 46.6328 33.7999 44.1182 34.4189C39.5716 35.4557 35.5978 42.5017 38.8594 46.5306C42.1196 50.4625 50.1618 42.8719 51.7762 40.422C52.2515 39.7356 52.7252 38.9523 53.1021 38.1703C53.2005 38.266 53.2977 38.2645 53.396 38.3602C60.4477 42.7221 54.5176 48.729 49.6083 51.5181C48.8377 51.9175 49.5325 52.975 50.3045 52.6726C55.415 50.3659 61.3648 45.7175 57.7824 39.6551C56.8879 38.2123 55.6081 36.9692 54.0428 36.1184C56.0998 30.7503 56.0094 24.5398 51.101 20.7292C45.211 16.1562 37.6845 19.1774 32.1017 22.3646C32.0032 22.2691 32.0032 22.2691 31.9048 22.1733C26.4872 16.7199 18.8689 13.4339 12.0254 10.0395C12.5007 9.3532 12.9746 8.56968 13.4499 7.88351C13.7339 7.39393 13.627 6.71609 13.2332 6.33375C9.89298 3.56774 5.88339 1.49089 1.50686 0.875232C0.435374 0.599667 -0.325372 1.67822 0.175359 2.73871ZM33.341 27.4905C35.5295 31.1468 32.9632 34.8724 30.4799 37.6262C27.2329 41.2646 21.8818 40.372 22.8688 34.8253C23.41 32.0028 25.9005 29.7342 27.9114 27.8608C28.9646 26.8749 30.2118 25.886 31.5576 24.9929C32.2483 25.7593 32.8433 26.6243 33.341 27.4905ZM51.1458 37.131C49.8256 39.7708 47.913 41.7398 45.5099 43.3277C44.4523 44.0226 43.2964 44.6217 42.0392 44.9312C38.7541 45.9496 40.3273 40.6856 40.9868 39.3172C42.9709 35.6001 47.6329 35.8234 51.1458 37.131ZM10.7274 7.53494C10.7288 7.63198 10.6318 7.63339 10.6332 7.73043C10.3421 7.73467 10.0538 7.93314 9.86536 8.32395C9.58414 9.00745 9.20589 9.69236 8.82764 10.3774C8.63781 10.6714 8.06407 11.2621 8.25814 11.2592C8.16111 11.2607 8.06548 11.3591 8.0669 11.4561C7.46913 10.3974 6.67729 9.34112 6.07953 8.28236C5.28345 6.93515 4.48596 5.4909 3.68846 4.0465C6.12426 4.69011 8.56855 5.91625 10.7274 7.53494Z"
+                fill="#7C451F" />
+            </svg>
+            <div class="inner-content">
+              <div class="qote-icon">
+                <i class="lni lni-quotation"></i>
+              </div>
+              <p class="text">
+                On the other hand denoun with righteous and disliks men who
+                are beguiled demorae momentc blinded by desire that can
+              </p>
+              <div class="author">
+                <div class="image">
+                  <img src="assets/images/testimonial/author-4.jpg" alt="Author" />
+                </div>
+                <h4 class="name">
+                  David Warner
+                  <span class="deg">Web Developer</span>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <!-- End Single Testimonial -->
+        </div>
+        <div class="col-lg-6 col-12">
+          <!-- Start Single Testimonial -->
+          <div class="single-testimonial">
+            <svg class="shape1" width="62" height="31" viewBox="0 0 62 31" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M-1.10459e-06 -3.51286e-06C-1.46049e-06 4.07097 0.801837 8.10209 2.35973 11.8632C3.91763 15.6243 6.20107 19.0417 9.07969 21.9203C11.9583 24.7989 15.3757 27.0824 19.1368 28.6403C22.8979 30.1982 26.929 31 31 31C35.071 31 39.1021 30.1982 42.8632 28.6403C46.6243 27.0824 50.0417 24.7989 52.9203 21.9203C55.7989 19.0417 58.0824 15.6243 59.6403 11.8632C61.1982 8.10209 62 4.07098 62 -8.02757e-07L31 -8.02758e-07L-1.10459e-06 -3.51286e-06Z"
+                fill="#FF8686" />
+            </svg>
+            <svg class="shape2" width="82" height="74" viewBox="0 0 82 74" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="45.0005" cy="37" r="37" fill="#FE9955" />
+              <path
+                d="M0.175359 2.73871C1.17682 4.85939 2.2739 6.88145 3.46802 8.90242C4.46524 10.732 5.46811 12.9497 6.94627 14.4811C7.73528 15.3431 9.37218 14.4457 8.96708 13.287C8.96708 13.287 8.96566 13.1899 8.86863 13.1913C9.05846 12.8974 9.2497 12.7003 9.53657 12.4052C9.63361 12.4037 9.82627 12.304 9.92331 12.3026C10.116 12.2027 10.3072 12.0059 10.4985 11.8088C15.7794 14.5465 21.0575 17.0902 25.9574 20.3188C27.4271 21.268 28.8012 22.3157 30.081 23.5587C25.1774 26.7359 19.5257 31.8654 20.6822 37.9632C22.255 45.996 30.8275 41.5036 33.678 37.2886C37.1963 32.2874 36.94 28.0206 33.4815 23.8005C36.7525 21.8117 40.4199 20.3993 44.0133 20.5412C52.6538 20.7066 54.2222 28.4483 52.0851 34.9823C49.548 34.0486 46.6328 33.7999 44.1182 34.4189C39.5716 35.4557 35.5978 42.5017 38.8594 46.5306C42.1196 50.4625 50.1618 42.8719 51.7762 40.422C52.2515 39.7356 52.7252 38.9523 53.1021 38.1703C53.2005 38.266 53.2977 38.2645 53.396 38.3602C60.4477 42.7221 54.5176 48.729 49.6083 51.5181C48.8377 51.9175 49.5325 52.975 50.3045 52.6726C55.415 50.3659 61.3648 45.7175 57.7824 39.6551C56.8879 38.2123 55.6081 36.9692 54.0428 36.1184C56.0998 30.7503 56.0094 24.5398 51.101 20.7292C45.211 16.1562 37.6845 19.1774 32.1017 22.3646C32.0032 22.2691 32.0032 22.2691 31.9048 22.1733C26.4872 16.7199 18.8689 13.4339 12.0254 10.0395C12.5007 9.3532 12.9746 8.56968 13.4499 7.88351C13.7339 7.39393 13.627 6.71609 13.2332 6.33375C9.89298 3.56774 5.88339 1.49089 1.50686 0.875232C0.435374 0.599667 -0.325372 1.67822 0.175359 2.73871ZM33.341 27.4905C35.5295 31.1468 32.9632 34.8724 30.4799 37.6262C27.2329 41.2646 21.8818 40.372 22.8688 34.8253C23.41 32.0028 25.9005 29.7342 27.9114 27.8608C28.9646 26.8749 30.2118 25.886 31.5576 24.9929C32.2483 25.7593 32.8433 26.6243 33.341 27.4905ZM51.1458 37.131C49.8256 39.7708 47.913 41.7398 45.5099 43.3277C44.4523 44.0226 43.2964 44.6217 42.0392 44.9312C38.7541 45.9496 40.3273 40.6856 40.9868 39.3172C42.9709 35.6001 47.6329 35.8234 51.1458 37.131ZM10.7274 7.53494C10.7288 7.63198 10.6318 7.63339 10.6332 7.73043C10.3421 7.73467 10.0538 7.93314 9.86536 8.32395C9.58414 9.00745 9.20589 9.69236 8.82764 10.3774C8.63781 10.6714 8.06407 11.2621 8.25814 11.2592C8.16111 11.2607 8.06548 11.3591 8.0669 11.4561C7.46913 10.3974 6.67729 9.34112 6.07953 8.28236C5.28345 6.93515 4.48596 5.4909 3.68846 4.0465C6.12426 4.69011 8.56855 5.91625 10.7274 7.53494Z"
+                fill="#7C451F" />
+            </svg>
+            <div class="inner-content">
+              <div class="qote-icon">
+                <i class="lni lni-quotation"></i>
+              </div>
+              <p class="text">
+                On the other hand denoun with righteous and disliks men who
+                are beguiled demorae momentc blinded by desire that can
+              </p>
+              <div class="author">
+                <div class="image">
+                  <img src="assets/images/testimonial/author-5.jpg" alt="Author" />
+                </div>
+                <h4 class="name">
+                  Naimur Rahman
+                  <span class="deg">Ui/UX Designer</span>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <!-- End Single Testimonial -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Testimonial Area -->
+
+  <!-- Start Latest News Area -->
+  <div id="blog" class="latest-news-area section">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>latest news</h6>
+              <h2 class="fw-bold">Latest News & Blog</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-12">
+          <!-- Single News -->
+          <div class="single-news">
+            <div class="image">
+              <a href="javascript:void(0)"><img class="thumb" src="assets/images/blog/1.jpg" alt="Blog" /></a>
+              <div class="meta-details">
+                <img class="thumb" src="assets/images/blog/b6.jpg" alt="Author" />
+                <span>BY TIM NORTON</span>
+              </div>
+            </div>
+            <div class="content-body">
+              <h4 class="title">
+                <a href="javascript:void(0)"> Make your team a Design driven company </a>
+              </h4>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's
+                standard.
+              </p>
+            </div>
+          </div>
+          <!-- End Single News -->
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <!-- Single News -->
+          <div class="single-news">
+            <div class="image">
+              <a href="javascript:void(0)"><img class="thumb" src="assets/images/blog/2.jpg" alt="Blog" /></a>
+              <div class="meta-details">
+                <img class="thumb" src="assets/images/blog/b6.jpg" alt="Author" />
+                <span>BY TIM NORTON</span>
+              </div>
+            </div>
+            <div class="content-body">
+              <h4 class="title">
+                <a href="javascript:void(0)">
+                  The newest web framework that changed the world
+                </a>
+              </h4>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's
+                standard.
+              </p>
+            </div>
+          </div>
+          <!-- End Single News -->
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <!-- Single News -->
+          <div class="single-news">
+            <div class="image">
+              <a href="javascript:void(0)"><img class="thumb" src="assets/images/blog/3.jpg" alt="Blog" /></a>
+              <div class="meta-details">
+                <img class="thumb" src="assets/images/blog/b6.jpg" alt="Author" />
+                <span>BY TIM NORTON</span>
+              </div>
+            </div>
+            <div class="content-body">
+              <h4 class="title">
+                <a href="javascript:void(0)">
+                  5 ways to improve user retention for your startup
+                </a>
+              </h4>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has been the industry's
+                standard.
+              </p>
+            </div>
+          </div>
+          <!-- End Single News -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Latest News Area -->
+
+  <!-- Start Brand Area -->
+  <div id="clients" class="brand-area section">
+    <!--======  Start Section Title Five ======-->
+    <div class="section-title-five">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content">
+              <h6>Meet our Clients</h6>
+              <h2 class="fw-bold">Our Awesome Clients</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!--======  End Section Title Five ======-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-12">
+          <div class="clients-logos">
+            <div class="single-image">
+              <img src="assets/images/client-logo/graygrids.svg" alt="Brand Logo Images" />
+            </div>
+            <div class="single-image">
+              <img src="assets/images/client-logo/uideck.svg" alt="Brand Logo Images" />
+            </div>
+            <div class="single-image">
+              <img src="assets/images/client-logo/ayroui.svg" alt="Brand Logo Images" />
+            </div>
+            <div class="single-image">
+              <img src="assets/images/client-logo/lineicons.svg" alt="Brand Logo Images" />
+            </div>
+            <div class="single-image">
+              <img src="assets/images/client-logo/tailwindtemplates.svg" alt="Brand Logo Images" />
+            </div>
+            <div class="single-image">
+              <img src="assets/images/client-logo/ecomhtml.svg" alt="Brand Logo Images" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Brand Area -->
+
+  <!-- ========================= contact-section start ========================= -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4">
+          <div class="contact-item-wrapper">
+            <div class="row">
+              <div class="col-12 col-md-6 col-xl-12">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="lni lni-phone"></i>
+                  </div>
+                  <div class="contact-content">
+                    <h4>Contact</h4>
+                    <p>0984537278623</p>
+                    <p>yourmail@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-12">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="lni lni-map-marker"></i>
+                  </div>
+                  <div class="contact-content">
+                    <h4>Address</h4>
+                    <p>175 5th Ave, New York, NY 10010</p>
+                    <p>United States</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-12">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="lni lni-alarm-clock"></i>
+                  </div>
+                  <div class="contact-content">
+                    <h4>Schedule</h4>
+                    <p>24 Hours / 7 Days Open</p>
+                    <p>Office time: 10 AM - 5:30 PM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8">
+          <div class="contact-form-wrapper">
+            <div class="row">
+              <div class="col-xl-10 col-lg-8 mx-auto">
+                <div class="section-title text-center">
+                  <span> Get in Touch </span>
+                  <h2>
+                    Ready to Get Started
+                  </h2>
+                  <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus
+                    quiblanditiis praesentium
+                  </p>
+                </div>
+              </div>
+            </div>
+            <form action="#" class="contact-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" name="name" id="name" placeholder="Name" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="email" name="email" id="email" placeholder="Email" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" name="phone" id="phone" placeholder="Phone" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="subject" id="email" placeholder="Subject" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <textarea name="message" id="message" placeholder="Type Message" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="button text-center rounded-buttons">
+                    <button type="submit" class="btn primary-btn rounded-full">
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========================= contact-section end ========================= -->
+
+  <!-- ========================= map-section end ========================= -->
+  <section class="map-section map-style-9">
+    <div class="map-container">
+      <object style="border:0; height: 500px; width: 100%;"
+        data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3102.7887109309127!2d-77.44196278417968!3d38.95165507956235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDU3JzA2LjAiTiA3N8KwMjYnMjMuMiJX!5e0!3m2!1sen!2sbd!4v1545420879707"></object>
+    </div>
+    </div>
+  </section>
+  <!-- ========================= map-section end ========================= -->
+
+  <!-- Start Footer Area -->
+  <footer class="footer-area footer-eleven">
+    <!-- Start Footer Top -->
+    <div class="footer-top">
+      <div class="container">
+        <div class="inner-content">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="footer-widget f-about">
+                <div class="logo">
+                  <a href="index.html">
+                    <img src="assets/images/logo.svg" alt="#" class="img-fluid" />
+                  </a>
+                </div>
+                <p>
+                  Making the world a better place through constructing elegant
+                  hierarchies.
+                </p>
+                <p class="copyright-text">
+                  <span>© 2024 Ayro UI.</span>Designed and Developed by
+                  <a href="javascript:void(0)" rel="nofollow"> Ayro UI </a>
+                </p>
+              </div>
+              <!-- End Single Widget -->
+            </div>
+            <div class="col-lg-2 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="footer-widget f-link">
+                <h5>Solutions</h5>
+                <ul>
+                  <li><a href="javascript:void(0)">Marketing</a></li>
+                  <li><a href="javascript:void(0)">Analytics</a></li>
+                  <li><a href="javascript:void(0)">Commerce</a></li>
+                  <li><a href="javascript:void(0)">Insights</a></li>
+                </ul>
+              </div>
+              <!-- End Single Widget -->
+            </div>
+            <div class="col-lg-2 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="footer-widget f-link">
+                <h5>Support</h5>
+                <ul>
+                  <li><a href="javascript:void(0)">Pricing</a></li>
+                  <li><a href="javascript:void(0)">Documentation</a></li>
+                  <li><a href="javascript:void(0)">Guides</a></li>
+                  <li><a href="javascript:void(0)">API Status</a></li>
+                </ul>
+              </div>
+              <!-- End Single Widget -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="footer-widget newsletter">
+                <h5>Subscribe</h5>
+                <p>Subscribe to our newsletter for the latest updates</p>
+                <form action="#" method="get" target="_blank" class="newsletter-form">
+                  <input name="EMAIL" placeholder="Email address" required="required" type="email" />
+                  <div class="button">
+                    <button class="sub-btn">
+                      <i class="lni lni-envelope"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- End Single Widget -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ End Footer Top -->
+  </footer>
+  <!--/ End Footer Area -->
+
+	<div class="made-in-ayroui mt-4">
+		<a href="https://ayroui.com" target="_blank" rel="nofollow">
+		  <img style="width:220px" src="assets/images/ayroui.svg">
+		</a>
+	</div>
+
+  <a href="#" class="scroll-top btn-hover">
+    <i class="lni lni-chevron-up"></i>
+  </a>
+
+  <!--====== js ======-->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/glightbox.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/tiny-slider.js"></script>
+
+  <script>
+
+    //===== close navbar-collapse when a  clicked
+    let navbarTogglerNine = document.querySelector(
+      ".navbar-nine .navbar-toggler"
+    );
+    navbarTogglerNine.addEventListener("click", function () {
+      navbarTogglerNine.classList.toggle("active");
+    });
+
+    // ==== left sidebar toggle
+    let sidebarLeft = document.querySelector(".sidebar-left");
+    let overlayLeft = document.querySelector(".overlay-left");
+    let sidebarClose = document.querySelector(".sidebar-close .close");
+
+    overlayLeft.addEventListener("click", function () {
+      sidebarLeft.classList.toggle("open");
+      overlayLeft.classList.toggle("open");
+    });
+    sidebarClose.addEventListener("click", function () {
+      sidebarLeft.classList.remove("open");
+      overlayLeft.classList.remove("open");
+    });
+
+    // ===== navbar nine sideMenu
+    let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
+
+    sideMenuLeftNine.addEventListener("click", function () {
+      sidebarLeft.classList.add("open");
+      overlayLeft.classList.add("open");
+    });
+
+    //========= glightbox
+    GLightbox({
+      'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
+      'type': 'video',
+      'source': 'youtube', //vimeo, youtube or local
+      'width': 900,
+      'autoplayVideos': true,
+    });
+
+    //============== isotope masonry portfolio-three
+    const filters = document.querySelectorAll(".portfolio-menu button");
+
+    filters.forEach((filter) => {
+      filter.addEventListener("click", function () {
+        // ==== Filter btn toggle
+        let filterBtn = filters[0];
+        while (filterBtn) {
+          if (filterBtn.tagName === "BUTTON") {
+            filterBtn.classList.remove("active");
+          }
+          filterBtn = filterBtn.nextSibling;
+        }
+        this.classList.add("active");
+
+        // === filter
+        let selectedFilter = filter.getAttribute("data-filter");
+        let itemsToHide = document.querySelectorAll(
+          `.grid .col-lg-4:not([data-filter='${selectedFilter}'])`
+        );
+        let itemsToShow = document.querySelectorAll(
+          `.grid [data-filter='${selectedFilter}']`
+        );
+
+        if (selectedFilter == "all") {
+          itemsToHide = [];
+          itemsToShow = document.querySelectorAll(".grid [data-filter]");
+        }
+
+        itemsToHide.forEach((el) => {
+          el.classList.add("hide");
+          el.classList.remove("show");
+        });
+
+        itemsToShow.forEach((el) => {
+          el.classList.remove("hide");
+          el.classList.add("show");
+        });
+      });
+    });
+
+    //========= glightbox
+    const myGallery3 = GLightbox({
+      selector: ".glightbox3",
+      type: "image",
+      width: 900,
+    });
+
+    //========= testimonial
+    tns({
+      container: ".testimonial-slider",
+      items: 3,
+      autoplay: true,
+      autoplayButtonOutput: false,
+      mouseDrag: true,
+      gutter: 0,
+      nav: true,
+      controls: false,
+      controlsText: [
+        '<i class="lni lni-arrow-left"></i>',
+        '<i class="lni lni-arrow-right"></i>',
+      ],
+      responsive: {
+        0: {
+          items: 1,
+        },
+        1170: {
+          items: 2,
+        },
+      },
+    });
+
+  </script>
+</body>
+
 </html>
