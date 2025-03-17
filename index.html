@@ -1069,7 +1069,7 @@
                                 <div class="container">
                                     <h2>Get in Touch</h2>
                                     <p>Ready to improve your business? Contact me for a free initial consultation.</p>
-                                    <form name="contact" method="POST" data-netlify="true" class="contact-form" netlify>
+                                    <form name="contact" method="POST" data-netlify="true" class="contact-form">
                                         <input type="hidden" name="form-name" value="contact">
                                         <p class="hidden" style="display: none;">
                                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -1132,6 +1132,10 @@
     </div>
     
     <script>
+        // Clear the message field when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('message').value = '';
+    });
         // Check if the URL contains a success parameter
         if (window.location.search.includes('success=true')) {
             // Show the success message
