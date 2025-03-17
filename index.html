@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petros Khachatrian - IT Consulting</title>
+    <link rel="icon" href="favicon.svg" type="image/x-icon">
+    
+    <title>LucariTech - IT Consulting</title>
     <style>
         :root {
             --primary: #1a237e;
@@ -333,7 +335,12 @@
             vertical-align: middle;
         }
 
-        .nav-toggle {
+        /* Mobile navigation - CSS-only approach */
+.nav-toggle-checkbox {
+  display: none; /* Hide the checkbox */
+}
+
+.nav-toggle {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
@@ -355,9 +362,11 @@
     flex-direction: column;
     padding: 1rem 2rem;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
   }
   
-  .nav-links.active {
+  /* This is the key part - when checkbox is checked, show the nav links */
+  .nav-toggle-checkbox:checked ~ .nav-links {
     display: flex;
   }
   
@@ -376,21 +385,24 @@
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <img src="assets/images/logo.png" alt="LucariTech">
-            </div>
-            <div class="nav-toggle">
-                <i class="fas fa-bars"></i>
-              </div>
-              <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#credentials">Credentials</a>
-                <a href="#case-studies">Case Studies</a>
-                <a href="#contact">Contact</a>
-              </div>
-            </nav>
-        </header>
+          <div class="logo">
+            <img src="assets/images/logo.png" alt="LucariTech Logo">
+          </div>
+          
+          <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox">
+          <label for="nav-toggle-checkbox" class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </label>
+          
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#credentials">Credentials</a>
+            <a href="#case-studies">Case Studies</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </header>
     
     <section class="hero">
         <h1>Secure Technology Solutions for Small Businesses</h1>
