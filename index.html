@@ -34,19 +34,29 @@
         }
         
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
         
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Left alignment */
+  margin-right: auto; /* Pushes nav links to the right */
+}
+
+.logo img {
+  height: 40px; /* Adjust this height as needed */
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center; /* Left alignment of image content */
+}
+
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -322,22 +332,65 @@
             margin-left: 0.5rem;
             vertical-align: middle;
         }
+
+        .nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
+    flex-direction: column;
+    padding: 1rem 2rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links a {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">LucariTech</div>
-            <div class="nav-links">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="LucariTech">
+            </div>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+              </div>
+              <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#credentials">Credentials</a>
                 <a href="#case-studies">Case Studies</a>
                 <a href="#contact">Contact</a>
-            </div>
-        </nav>
-    </header>
+              </div>
+            </nav>
+        </header>
     
     <section class="hero">
         <h1>Secure Technology Solutions for Small Businesses</h1>
@@ -576,5 +629,28 @@
         </div>
         <p>&copy; 2025 LucariTech. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+          const navToggle = document.querySelector('.nav-toggle');
+          const navLinks = document.querySelector('.nav-links');
+          
+          if (navToggle) { // Check if element exists            
+            navToggle.addEventListener('click', function() {
+              navLinks.classList.toggle('active');
+            });
+          } else {
+          }
+          
+          // Close menu when clicking on a link
+          const links = document.querySelectorAll('.nav-links a');
+          links.forEach(link => {
+            link.addEventListener('click', function() {
+              navLinks.classList.remove('active');
+            });
+          });
+        });
+      </script>
 </body>
 </html>
