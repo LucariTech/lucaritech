@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.svg" type="image/x-icon">
     
     <title>LucariTech - IT Consulting</title>
     <style>
@@ -74,6 +73,18 @@
         .nav-links a:hover {
             color: var(--light);
         }
+
+        .nav-links.active {
+  display: flex !important;
+  background-color: var(--primary);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  flex-direction: column;
+}
         
         .hero {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -335,12 +346,7 @@
             vertical-align: middle;
         }
 
-        /* Mobile navigation - CSS-only approach */
-.nav-toggle-checkbox {
-  display: none; /* Hide the checkbox */
-}
-
-.nav-toggle {
+        .nav-toggle {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
@@ -348,37 +354,48 @@
 }
 
 @media (max-width: 768px) {
+  /* Always show hamburger */
   .nav-toggle {
     display: block;
   }
   
+  /* Header positioning context */
+  header {
+    position: relative;
+  }
+  
+  /* Hide nav links by default */
   .nav-links {
     display: none;
+  }
+  
+  /* Show nav links when class is applied */
+  .nav-links.show-mobile-menu {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
+    width: 100%;
     background-color: var(--primary);
-    flex-direction: column;
-    padding: 1rem 2rem;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
+    padding: 1rem;
+    z-index: 1050;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   }
   
-  /* This is the key part - when checkbox is checked, show the nav links */
-  .nav-toggle-checkbox:checked ~ .nav-links {
-    display: flex;
-  }
-  
-  .nav-links a {
+  /* Style the links */
+  .nav-links.show-mobile-menu a {
     padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    display: block;
+    width: 100%;
   }
   
-  .nav-links a:last-child {
+  .nav-links.show-mobile-menu a:last-child {
     border-bottom: none;
   }
 }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -389,10 +406,9 @@
             <img src="assets/images/logo.png" alt="LucariTech Logo">
           </div>
           
-          <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox">
-          <label for="nav-toggle-checkbox" class="nav-toggle">
+          <div class="nav-toggle">            
             <i class="fas fa-bars"></i>
-          </label>
+          </div>
           
           <div class="nav-links">
             <a href="#about">About</a>
@@ -643,26 +659,35 @@
     </footer>
 
     <script>
-        // Mobile navigation toggle
         document.addEventListener('DOMContentLoaded', function() {
-          const navToggle = document.querySelector('.nav-toggle');
-          const navLinks = document.querySelector('.nav-links');
-          
-          if (navToggle) { // Check if element exists            
-            navToggle.addEventListener('click', function() {
-              navLinks.classList.toggle('active');
-            });
-          } else {
-          }
-          
-          // Close menu when clicking on a link
-          const links = document.querySelectorAll('.nav-links a');
-          links.forEach(link => {
-            link.addEventListener('click', function() {
-              navLinks.classList.remove('active');
-            });
-          });
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        navToggle.addEventListener('click', function() {
+            // Toggle display style directly
+            if (navLinks.style.display === 'flex') {
+            navLinks.style.display = 'none';
+            } else {
+            navLinks.style.display = 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.backgroundColor = '#1a237e';
+            navLinks.style.padding = '1rem 2rem';
+            navLinks.style.zIndex = '1000';
+            }
         });
-      </script>
+  
+        // Close menu when clicking on a link
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+            navLinks.style.display = 'none';
+            });
+        });
+        });
+    </script>
 </body>
 </html>
