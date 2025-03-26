@@ -9,7 +9,65 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="LucariTech - Secure Technology Solutions for Small Businesses">
+    <meta name="description" content="Professional cybersecurity, custom software, and website development from a certified CISSP. Protecting your digital assets with security-first solutions.">
+    <meta name="keywords" content="cybersecurity consulting, CISSP, small business security, secure software development, website security, IT security services, custom software development">
+    <meta name="author" content="Petros Khachatrian">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lucaritech.com/">
+    <meta property="og:title" content="LucariTech - Secure Technology Solutions">
+    <meta property="og:description" content="Professional cybersecurity and software development services with security at the core of everything we create.">
+    <meta property="og:image" content="https://lucaritech.com/images/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lucaritech.com/">
+    <meta property="twitter:title" content="LucariTech - Secure Technology Solutions">
+    <meta property="twitter:description" content="Professional cybersecurity and software development services with security at the core of everything we create.">
+    <meta property="twitter:image" content="https://lucaritech.com/images/logo.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lucaritech.com/">
+
     <title>LucariTech - IT & Cyber Consulting</title>
+
+    <script>
+        // Lazy loading for images
+        document.addEventListener("DOMContentLoaded", function() {
+          const lazyImages = document.querySelectorAll('.case-study-image');
+          
+          if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  const image = entry.target;
+                  const backgroundImageUrl = image.dataset.src;
+                  if (backgroundImageUrl) {
+                    image.style.backgroundImage = `url('${backgroundImageUrl}')`;
+                    image.classList.add('loaded');
+                    observer.unobserve(image);
+                  }
+                }
+              });
+            });
+            
+            lazyImages.forEach(image => {
+              // Store the url in a data attribute
+              const currentBgImage = image.style.backgroundImage;
+              if (currentBgImage) {
+                const url = currentBgImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+                image.dataset.src = url;
+                image.style.backgroundImage = 'none';
+              }
+              imageObserver.observe(image);
+            });
+          }
+        });
+      </script>
+
     <style>
         :root {
             --primary: #1a237e;
@@ -47,12 +105,58 @@
   justify-content: space-between;
   align-items: center;
 }
+
+/* Button hover effects */
+.cta-button {
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background-color: #f8f8f8;
+}
+
+
+/* Navigation link effects */
+.nav-links a {
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
         
 .logo {
   display: flex;
   align-items: center;
   justify-content: flex-start; /* Left alignment */
   margin-right: auto; /* Pushes nav links to the right */
+}
+
+.case-study-image {
+  height: 200px;
+  background-color: #e0e0e0; /* Placeholder color */
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.case-study-image.loaded {
+  opacity: 1;
 }
 
 .logo img {
@@ -174,36 +278,71 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
+        /* Service Cards - Combined CSS */
+
+/* Base styling */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Service Cards - Complete Revision */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Service Cards - Original Version */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.2s;
+    border-bottom: 3px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-bottom: 3px solid var(--accent);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.service-card:hover .service-icon {
+    color: var(--primary);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+}
+
+/* Badge styling */
+.feature-badge {
+    display: inline-block;
+    background-color: var(--success);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
         
         .credentials {
             background-color: var(--light);
@@ -254,6 +393,25 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--secondary);
+        }
+        /* Case study card interactions */
+        .case-study {
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.2s;
+        border-bottom: 3px solid transparent;
+        }
+
+        .case-study:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border-bottom: 3px solid var(--accent);
+        }
+
+        .case-study h3 {
+        transition: color 0.3s ease;
+        }
+
+        .case-study:hover h3 {
+        color: var(--primary); /* Darken the title color on hover */
         }
         
         .contact {
@@ -401,6 +559,49 @@
   }
 }
 
+.faq-item {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.faq-question {
+  cursor: pointer;
+  padding: 1rem 0;
+  position: relative;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--accent);
+  transition: transform 0.3s;
+}
+
+.faq-question.active::after {
+  content: '−';
+  transform: rotate(0deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1rem 0 0;
+}
+
+.faq-question.active + .faq-answer {
+  max-height: 500px;
+  padding-bottom: 1.5rem;
+}
+
+.faq-answer p {
+  max-width: 70ch; /* Approximately 70 characters per line - optimal for reading */
+  line-height: 1.6;
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -421,6 +622,7 @@
             <a href="#credentials">Credentials</a>
             <a href="#case-studies">Case Studies</a>
             <a href="#contact">Contact</a>
+            <a href="#faq">FAQ</a>
           </div>
         </nav>
       </header>
@@ -449,13 +651,15 @@
         <section id="services">
             <h2>Services</h2>
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Security Assessment <span class="feature-badge">Popular</span></h3>
-                    <p>Comprehensive evaluation of your current security posture, identifying vulnerabilities and recommending practical solutions tailored to your business.</p>
+                
+              <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shield-alt"></i>
                 </div>
+                <h3>Security Assessment <span class="feature-badge">Popular</span></h3>
+                <p>Comprehensive evaluation of your current security posture, identifying vulnerabilities and recommending practical solutions tailored to your business.</p>
+            </div>  
+          
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-sync-alt"></i>
@@ -643,6 +847,87 @@
         <div id="success-message" style="display: none; margin-top: 20px; padding: 15px; background-color: rgba(255,255,255,0.2); border-radius: 5px;">
         <p>Thank you for your message! I'll get back to you as soon as possible.</p>
     </div>
+
+    <section id="faq" class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">What cybersecurity services do you provide for small businesses?</div>
+          <div class="faq-answer">
+            <p>We provide comprehensive cybersecurity solutions including security assessments, ongoing monitoring, implementation of security tools, and employee training - all tailored specifically for small business needs and budgets.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How much does a cybersecurity assessment typically cost for a small business?</div>
+            <div class="faq-answer">
+              <p>For small businesses, our security assessments typically range from $1,500-$5,000 depending on your company size, industry, and complexity of systems. We offer tailored packages to fit various budgets while ensuring comprehensive coverage of your security needs.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">How long does it take to develop a custom software solution?</div>
+            <div class="faq-answer">
+              <p>Custom software development timelines vary based on project scope and complexity. Simple applications might take 2-3 months, while more complex enterprise solutions can take 6+ months. During our initial consultation, we'll provide a realistic timeline after understanding your specific requirements.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">Do you offer ongoing maintenance for websites and applications?</div>
+            <div class="faq-answer">
+              <p>Yes, we provide ongoing maintenance and support services for all websites and applications we develop. Our maintenance packages include security updates, performance monitoring, bug fixes, and regular backups to ensure your digital assets remain secure and functioning optimally.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">What makes your cybersecurity approach different from other providers?</div>
+            <div class="faq-answer">
+              <p>Our approach combines CISSP-certified expertise with practical software development experience. Unlike many security consultants, we understand both the security landscape and how software is built, allowing us to implement security measures that are effective without hindering functionality or user experience.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">How do I know if my business needs a security assessment?</div>
+            <div class="faq-answer">
+              <p>Your business would benefit from a security assessment if you handle customer data, have experienced past security incidents, need to meet compliance requirements, recently expanded your digital infrastructure, or simply haven't evaluated your security posture in the last year. Prevention is always less costly than recovering from a breach.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">What industries do you specialize in?</div>
+            <div class="faq-answer">
+              <p>We've successfully worked with clients across various industries including healthcare, financial services, retail, manufacturing, education, and professional services. Our diverse experience allows us to understand industry-specific challenges and implement appropriate security and software solutions.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">How do you ensure the security of websites you develop?</div>
+            <div class="faq-answer">
+              <p>We implement security at every stage of website development, including secure coding practices, input validation, proper authentication and authorization mechanisms, regular security testing, and implementation of HTTPS. We also perform vulnerability assessments before launch and can set up ongoing security monitoring.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">What should I do if I suspect my business has been hacked?</div>
+            <div class="faq-answer">
+              <p>If you suspect a breach, first document everything you've observed, then isolate affected systems if possible without destroying evidence. Contact a cybersecurity professional immediately—don't wait. The faster you respond, the better chance you have of minimizing damage. We can guide you through the entire incident response process.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">Can you work with our existing IT team?</div>
+            <div class="faq-answer">
+              <p>Absolutely. We frequently collaborate with in-house IT teams, providing specialized security expertise or development capabilities while ensuring knowledge transfer. This collaborative approach ensures your team remains empowered while benefiting from our specialized skills.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">What programming languages and technologies do you work with?</div>
+            <div class="faq-answer">
+              <p>Our development team is proficient in a wide range of languages and frameworks including C#, JavaScript, .NET, and various database technologies.</p>
+            </div>
+          </div>
+
+        </section>
     
     <script>
         // Check if the URL contains a success parameter
@@ -667,7 +952,14 @@
         document.addEventListener('DOMContentLoaded', function() {
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
-        
+        const faqQuestions = document.querySelectorAll('.faq-question');
+  
+        faqQuestions.forEach(question => {
+          question.addEventListener('click', function() {
+            this.classList.toggle('active');
+          });
+        });
+
         navToggle.addEventListener('click', function() {
             // Toggle display style directly
             if (navLinks.style.display === 'flex') {
@@ -694,5 +986,40 @@
         });
         });
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "LucariTech",
+      "description": "Cybersecurity and software development services for small businesses",
+      "url": "https://lucaritech.com",
+      "logo": "https://lucaritech.com/images/logo.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Petros Khachatrian"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Cybersecurity Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Security Assessment"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Software Development"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
 </body>
 </html>
