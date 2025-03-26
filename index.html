@@ -950,8 +950,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
         const faqQuestions = document.querySelectorAll('.faq-question');
   
         faqQuestions.forEach(question => {
@@ -960,31 +958,58 @@
           });
         });
 
-        navToggle.addEventListener('click', function() {
-            // Toggle display style directly
-            if (navLinks.style.display === 'flex') {
-            navLinks.style.display = 'none';
-            } else {
-            navLinks.style.display = 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.backgroundColor = '#1a237e';
-            navLinks.style.padding = '1rem 2rem';
-            navLinks.style.zIndex = '1000';
-            }
-        });
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
   
-        // Close menu when clicking on a link
-        const links = document.querySelectorAll('.nav-links a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-            navLinks.style.display = 'none';
-            });
-        });
-        });
+   // Toggle menu when hamburger is clicked
+   navToggle.addEventListener('click', function() {
+    if (navLinks.style.display === 'flex') {
+      navLinks.style.display = 'none';
+    } else {
+      showMobileMenu();
+    }
+  });
+  
+  // Function to show the mobile menu with all necessary styles
+  function showMobileMenu() {
+    navLinks.style.display = 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '100%';
+    navLinks.style.left = '0';
+    navLinks.style.right = '0';
+    navLinks.style.backgroundColor = '#1a237e';
+    navLinks.style.padding = '1rem 2rem';
+    navLinks.style.zIndex = '1000';
+  }
+  
+  // When clicking on a link in mobile view
+  const links = document.querySelectorAll('.nav-links a');
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      // Only hide if we're in mobile view
+      if (window.innerWidth <= 768) {
+        navLinks.style.display = 'none';
+      }
+    });
+  });
+  
+  // Check screen size when resizing
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      // Reset to default styles for desktop - IMPORTANT
+      navLinks.style = '';
+      navLinks.removeAttribute('style');
+    }
+  });
+
+  // Initial check on page load
+  if (window.innerWidth > 768) {
+    // Ensure desktop navigation is always visible
+    navLinks.removeAttribute('style');
+  }
+});        
+
     </script>
     <script type="application/ld+json">
     {
