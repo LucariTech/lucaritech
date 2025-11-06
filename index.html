@@ -948,104 +948,93 @@
         <p>&copy; 2025 LucariTech. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        const faqQuestions = document.querySelectorAll('.faq-question');
-  
-        faqQuestions.forEach(question => {
-          question.addEventListener('click', function() {
-            this.classList.toggle('active');
-          });
-        });
-
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-  
-   // Toggle menu when hamburger is clicked
-   navToggle.addEventListener('click', function() {
-    if (navLinks.style.display === 'flex') {
-      navLinks.style.display = 'none';
-    } else {
-      showMobileMenu();
-    }
-  });
-  
-  // Function to show the mobile menu with all necessary styles
-  function showMobileMenu() {
-    navLinks.style.display = 'flex';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '100%';
-    navLinks.style.left = '0';
-    navLinks.style.right = '0';
-    navLinks.style.backgroundColor = '#1a237e';
-    navLinks.style.padding = '1rem 2rem';
-    navLinks.style.zIndex = '1000';
-  }
-  
-  // When clicking on a link in mobile view
-  const links = document.querySelectorAll('.nav-links a');
-  links.forEach(link => {
-    link.addEventListener('click', function() {
-      // Only hide if we're in mobile view
-      if (window.innerWidth <= 768) {
-        navLinks.style.display = 'none';
-      }
-    });
-  });
-  
-  // Check screen size when resizing
-  window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) {
-      // Reset to default styles for desktop - IMPORTANT
-      navLinks.style = '';
-      navLinks.removeAttribute('style');
-    }
-  });
-
-  // Initial check on page load
-  if (window.innerWidth > 768) {
-    // Ensure desktop navigation is always visible
-    navLinks.removeAttribute('style');
-  }
-});        
-
-    </script>
-
     <!-- NETLIFY FORM HANDLING SCRIPT -->
     <script>
-    // Netlify Forms Handler
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Netlify Forms Handler
+        const contactForm = document.getElementById('contact-form');
         
-        const form = e.target;
-        const formData = new FormData(form);
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const form = e.target;
+                const formData = new FormData(form);
+                
+                // Show loading spinner
+                const loadingElement = document.getElementById('form-loading');
+                if (loadingElement) {
+                    loadingElement.classList.add('show');
+                }
+                
+                // Submit to Netlify - IMPORTANT: Submit to root path, not /#contact
+                fetch('/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Hide form and show success message
+                    form.style.display = 'none';
+                    const successMessage = document.getElementById('success-message');
+                    if (successMessage) {
+                        successMessage.style.display = 'block';
+                    }
+                    if (loadingElement) {
+                        loadingElement.classList.remove('show');
+                    }
+                    
+                    // Optional: Reset form for future use
+                    form.reset();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    const errorMessage = document.getElementById('error-message');
+                    if (errorMessage) {
+                        errorMessage.style.display = 'block';
+                    }
+                    if (loadingElement) {
+                        loadingElement.classList.remove('show');
+                    }
+                });
+            });
+        }
         
-        // Show loading spinner
-        document.getElementById('form-loading').classList.add('show');
+        // Mobile menu toggle
+        const faqQuestions = document.querySelectorAll('.faq-question');
         
-        // Submit to Netlify
-        fetch('/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+        
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        navToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('show-mobile-menu');
+        });
+        
+        // Close mobile menu when clicking a link
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('show-mobile-menu');
+                }
+            });
+        });
+        
+        // Reset styles on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('show-mobile-menu');
             }
-            // Hide form and show success message
-            form.style.display = 'none';
-            document.getElementById('success-message').style.display = 'block';
-            document.getElementById('form-loading').classList.remove('show');
-            
-            // Optional: Reset form for future use
-            form.reset();
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-            document.getElementById('error-message').style.display = 'block';
-            document.getElementById('form-loading').classList.remove('show');
         });
     });
     </script>
@@ -1058,6 +1047,7 @@
         <input type="text" name="company" />
         <textarea name="message"></textarea>
     </form>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
