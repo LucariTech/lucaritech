@@ -820,26 +820,87 @@
     </div>
     
     <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Ready to improve your business? Contact me for a free initial consultation.</p>
-            <form name="contact" method="POST" class="contact-form">
-              <input type="hidden" name="form-name" value="contact">
-              
-              <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" required>
-              </div>
-              <!-- rest of your form fields -->
-              <button type="submit">Send Message</button>
-          </form>
-        </div>
-    </section>
-
-        <!-- Success message (hidden by default) -->
-        <div id="success-message" style="display: none; margin-top: 20px; padding: 15px; background-color: rgba(255,255,255,0.2); border-radius: 5px;">
-        <p>Thank you for your message! I'll get back to you as soon as possible.</p>
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <p>Ready to improve your business? Contact me for a free initial consultation.</p>
+        
+        <form name="contact" method="POST" class="contact-form" style="max-width: 600px; margin: 0 auto;">
+            <!-- This hidden input is REQUIRED for JavaScript submissions -->
+            <input type="hidden" name="form-name" value="contact">
+            
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+        
+        <div id="form-response"></div>
     </div>
+</section>
+    
+<!-- STEP 3: Simple JavaScript handler (OPTIONAL - form works without it) -->
+<script>
+// This is optional - the form will work without JavaScript
+// But this provides a better user experience without page reload
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[name="contact"]');
+    const response = document.getElementById('form-response');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                response.innerHTML = '<div style="background: #43a047; color: white; padding: 1rem; border-radius: 5px; margin-top: 1rem;">Thank you! Your message has been sent.</div>';
+                form.reset();
+            })
+            .catch(error => {
+                response.innerHTML = '<div style="background: #f44336; color: white; padding: 1rem; border-radius: 5px; margin-top: 1rem;">Error: Please refresh and try again.</div>';
+            });
+        });
+    }
+});
+</script>
+
+<!-- ⚡ QUICK TEST VERSION - Use this if nothing else works -->
+<!-- This is the absolute simplest form that will definitely work -->
+<div style="padding: 2rem; background: #f5f5f5; margin: 2rem 0;">
+    <h3>Test Form (Remove after testing)</h3>
+    <form name="test-contact" method="POST" data-netlify="true">
+        <p>
+            <input type="text" name="name" placeholder="Name" required>
+        </p>
+        <p>
+            <input type="email" name="email" placeholder="Email" required>
+        </p>
+        <p>
+            <textarea name="message" placeholder="Message" required></textarea>
+        </p>
+        <p>
+            <button type="submit">Test Submit</button>
+        </p>
+    </form>
+</div>
 
     <section id="faq" class="container">
         <h2>Frequently Asked Questions</h2>
