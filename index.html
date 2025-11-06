@@ -1011,6 +1011,53 @@
 });        
 
     </script>
+
+    <!-- NETLIFY FORM HANDLING SCRIPT -->
+    <script>
+    // Netlify Forms Handler
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const form = e.target;
+        const formData = new FormData(form);
+        
+        // Show loading spinner
+        document.getElementById('form-loading').classList.add('show');
+        
+        // Submit to Netlify
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            // Hide form and show success message
+            form.style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+            document.getElementById('form-loading').classList.remove('show');
+            
+            // Optional: Reset form for future use
+            form.reset();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            document.getElementById('error-message').style.display = 'block';
+            document.getElementById('form-loading').classList.remove('show');
+        });
+    });
+    </script>
+
+    <!-- Netlify-specific hidden form for build-time detection -->
+    <!-- This ensures Netlify recognizes the form during build -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="company" />
+        <textarea name="message"></textarea>
+    </form>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
