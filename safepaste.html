@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="SafePaste AI - Stop AI Training on Your Data | LucariTech">
+    <meta name="description" content="Protect your sensitive data from AI training. One-click anonymization for ChatGPT, Claude & other AI tools. By LucariTech cybersecurity experts.">
+    <meta name="keywords" content="AI privacy, ChatGPT privacy, data anonymization, AI training data, LucariTech, cybersecurity, protect sensitive information">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lucaritech.com/safepaste">
+    <meta property="og:title" content="SafePaste AI - Stop AI Training on Your Data">
+    <meta property="og:description" content="Protect your sensitive data from AI training. One-click anonymization for ChatGPT, Claude & other AI tools.">
+    <meta property="og:image" content="https://lucaritech.com/images/safepaste-og.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lucaritech.com/safepaste">
+
+    <title>SafePaste AI - Protect Your Data from AI Training | LucariTech</title>
+
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #283593;
+            --accent: #3949ab;
+            --light: #e8eaf6;
+            --dark: #121212;
+            --success: #43a047;
+            --warning: #f59e0b;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding-bottom: 3px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 50px;
+            background-color: var(--accent);
+        }
+
+        .problem-section {
+            background-color: #fff8e1;
+            border-left: 4px solid var(--warning);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 5px;
+        }
+
+        .problem-section h3 {
+            color: var(--warning);
+            margin-top: 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.2s;
+            border-bottom: 3px solid transparent;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .how-it-works {
+            background-color: var(--light);
+            padding: 4rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .pricing {
+            background-color: white;
+            padding: 4rem 2rem;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .pricing-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--accent);
+            transform: scale(1.05);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .features-list {
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            background-color: var(--success);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .testimonial {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: #e8f5e9;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            margin: 1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .trust-badge i {
+            color: var(--success);
+            font-size: 1.5rem;
+            margin-right: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .steps {
+                flex-direction: column;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="LucariTech Logo">
+            </div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/#services">Services</a>
+                <a href="/#contact">Contact</a>
+                <a href="/safepaste">SafePaste AI</a>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>🔒 SafePaste AI</h1>
+        <p class="subtitle">By LucariTech Cybersecurity</p>
+        <p><strong>Stop AI from training on YOUR confidential data</strong></p>
+        <p>Protect emails, phone numbers, addresses, and sensitive information before using ChatGPT, Claude, or any AI tool</p>
+        <a href="https://chrome.google.com/webstore" class="cta-button">Install Free - Chrome Extension</a>
+        <a href="#pricing" class="cta-button secondary">View Pricing</a>
+    </section>
+    
+    <div class="container">
+        <section class="problem-section">
+            <h3>⚠️ The Hidden Risk of Using AI Tools</h3>
+            <p><strong>When you paste information into ChatGPT, Claude, or other AI tools, that data could be used to train their models.</strong></p>
+            <p>This means your:</p>
+            <ul>
+                <li>Client emails and contact information</li>
+                <li>Business addresses and phone numbers</li>
+                <li>Company names and proprietary details</li>
+                <li>Personal information and sensitive data</li>
+            </ul>
+            <p><strong>...could end up in AI training datasets, potentially exposed to anyone using these tools.</strong></p>
+        </section>
+
+        <section>
+            <h2>The Solution: SafePaste AI</h2>
+            <p>SafePaste AI anonymizes your sensitive data <strong>before</strong> you paste it into any AI tool. All processing happens locally on your device - your data never touches our servers.</p>
+            
+            <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span><strong>By LucariTech</strong> - Trusted Cybersecurity Experts</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-lock"></i>
+                <span><strong>100% Private</strong> - Local Processing Only</span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-bolt"></i>
+                <span><strong>One Click</strong> - Simple & Fast</span>
+            </div>
+        </section>
+    </div>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary);">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Paste Your Text</h3>
+                    <p>Click the SafePaste AI icon and paste text containing sensitive information</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Click Anonymize</h3>
+                    <p>Our local engine instantly detects and replaces sensitive data</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Copy & Paste</h3>
+                    <p>Copy the safe text and paste into ChatGPT, Claude, or any AI tool</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section>
+            <h2>What We Protect</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Email Addresses</h3>
+                    <p>john@company.com<br>↓<br>user1@example.com</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3>Phone Numbers</h3>
+                    <p>(555) 123-4567<br>↓<br>(555) 000-0001</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Addresses</h3>
+                    <p>123 Main Street<br>↓<br>100 Main Street</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👤</div>
+                    <h3>Personal Names</h3>
+                    <p>John Smith<br>↓<br>Person A</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>URLs & Domains</h3>
+                    <p>company.com<br>↓<br>example1.com</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Credit Cards</h3>
+                    <p>4111-1111-1111-1111<br>↓<br>XXXX-XXXX-XXXX-0001</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Dates</h3>
+                    <p>12/25/2024<br>↓<br>[DATE_1]</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🆔</div>
+                    <h3>SSN Numbers</h3>
+                    <p>123-45-6789<br>↓<br>XXX-XX-0001</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Company Names <span class="feature-badge">PRO</span></h3>
+                    <p>Acme Corp Inc<br>↓<br>Company A</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔢</div>
+                    <h3>Account Numbers <span class="feature-badge">PRO</span></h3>
+                    <p>Account: 123456789<br>↓<br>ACCOUNT_0001</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 style="text-align: center;">Simple, Transparent Pricing</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0</div>
+                    <div class="price-period">Forever</div>
+                    <ul class="features-list">
+                        <li>✓ Up to 5,000 characters</li>
+                        <li>✓ Email protection</li>
+                        <li>✓ Phone number protection</li>
+                        <li>✓ Address anonymization</li>
+                        <li>✓ URL & IP protection</li>
+                        <li>✓ Credit card detection</li>
+                        <li>✓ SSN anonymization</li>
+                        <li>✓ Date protection</li>
+                        <li>✓ Optional name detection</li>
+                        <li>✓ All keyboard shortcuts</li>
+                    </ul>
+                    <a href="https://chrome.google.com/webstore" class="cta-button">Install Free</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>Pro <span class="feature-badge">Best Value</span></h3>
+                    <div class="price">$4.99</div>
+                    <div class="price-period">One-time • Lifetime Access</div>
+                    <ul class="features-list">
+                        <li><strong>✓ Everything in Free, plus:</strong></li>
+                        <li>✓ <strong>Unlimited characters</strong></li>
+                        <li>✓ <strong>Company name detection</strong></li>
+                        <li>✓ <strong>Account number protection</strong></li>
+                        <li>✓ Auto-save functionality</li>
+                        <li>✓ Priority support from LucariTech</li>
+                        <li>✓ All future features included</li>
+                        <li>✓ Lifetime updates</li>
+                    </ul>
+                    <a href="/safepaste-upgrade" class="cta-button">Upgrade to Pro</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section>
+            <h2>Who Uses SafePaste AI?</h2>
+            <div class="testimonial">
+                <p>"As a cybersecurity consultant, I needed a tool I could trust with client data. SafePaste AI delivers exactly what it promises - local processing and real protection. It's now essential for my workflow."</p>
+                <div class="testimonial-author">— Security Consultant</div>
+            </div>
+            <div class="testimonial">
+                <p>"Finally, I can use ChatGPT for work documents without worrying about exposing client information. The one-click workflow makes it effortless. Game changer for my business."</p>
+                <div class="testimonial-author">— Business Owner</div>
+            </div>
+            <div class="testimonial">
+                <p>"Simple, fast, and actually works. Caught email addresses and phone numbers I didn't even think about. Worth every penny for the Pro version."</p>
+                <div class="testimonial-author">— Software Developer</div>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin: 4rem 0;">
+            <h2>Perfect For:</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Business Professionals</h3>
+                    <p>Share documents without exposing client information</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍💻</div>
+                    <h3>Developers</h3>
+                    <p>Debug code without revealing credentials or IPs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Researchers</h3>
+                    <p>Protect participant data while using AI for analysis</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Legal Professionals</h3>
+                    <p>Maintain confidentiality while getting AI assistance</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Healthcare Workers</h3>
+                    <p>Discuss cases without HIPAA violations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>Writers</h3>
+                    <p>Get AI feedback on personal content safely</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: var(--light); padding: 3rem; border-radius: 10px; text-align: center; margin: 4rem 0;">
+            <h2>Ready to Protect Your Data?</h2>
+            <p style="font-size: 1.2rem; margin: 2rem 0;">Join thousands of professionals using SafePaste AI to safely use AI tools</p>
+            <a href="https://chrome.google.com/webstore" class="cta-button" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Install Free Now</a>
+            <p style="margin-top: 1rem; color: #666;">No credit card required • 100% free to start</p>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/lucaritech/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/lucaritech"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/LucariTech/"><i class="fab fa-github"></i></a> 
+        </div>
+        <p>&copy; 2025 LucariTech. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;"><a href="/safepaste-privacy" style="color: white; text-decoration: underline;">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    
+    <title>Welcome to SafePaste AI Pro! | LucariTech</title>
+
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #283593;
+            --accent: #3949ab;
+            --light: #e8eaf6;
+            --success: #43a047;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #10b981, #059669);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 700px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 3rem 2.5rem;
+            margin: 2rem;
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: bounce 0.6s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #065f46;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .details {
+            background: #f0fdf4;
+            border: 2px solid #86efac;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #bbf7d0;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .detail-value {
+            color: #6b7280;
+        }
+
+        .next-steps {
+            background: #f9fafb;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .next-steps h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            color: #6b7280;
+            line-height: 1.6;
+            padding-top: 0.3rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(26, 35, 126, 0.3);
+        }
+
+        .support {
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        .support a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .support a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .success-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">🎉</div>
+        <h1>Welcome to SafePaste AI Pro!</h1>
+        <p class="subtitle">Your payment was successful</p>
+
+        <div class="details">
+            <div class="detail-row">
+                <div class="detail-label">Status</div>
+                <div class="detail-value" style="color: #10b981; font-weight: 600;">✓ Payment Confirmed</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Amount Paid</div>
+                <div class="detail-value">$4.99 USD</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Access Level</div>
+                <div class="detail-value">Lifetime Pro - By LucariTech</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Transaction ID</div>
+                <div class="detail-value" id="session-id">Loading...</div>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>Next Steps:</h3>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">Close this page and return to SafePaste AI</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">Your Pro features are now active - unlimited anonymization!</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text">Safely use ChatGPT, Claude, and any AI without exposing your data</div>
+            </div>
+        </div>
+
+        <button class="cta-button" onclick="window.close()">
+            Close This Page
+        </button>
+
+        <div class="support">
+            Need help? Contact LucariTech at <a href="mailto:support@lucaritech.com">support@lucaritech.com</a>
+        </div>
+    </div>
+
+    <script>
+        // Get session ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        
+        if (sessionId) {
+            document.getElementById('session-id').textContent = sessionId.substring(0, 20) + '...';
+            console.log('Payment verified:', sessionId);
+        } else {
+            document.getElementById('session-id').textContent = 'N/A';
+        }
+
+        // Auto-close after 30 seconds (optional)
+        // setTimeout(() => window.close(), 30000);
+    </script>
+</body>
+</html>

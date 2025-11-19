@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    
+    <title>Upgrade to SafePaste AI Pro | LucariTech</title>
+
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #283593;
+            --accent: #3949ab;
+            --light: #e8eaf6;
+            --dark: #121212;
+            --success: #43a047;
+            --warning: #f59e0b;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 700px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            margin: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 2.5rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .price-period {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 3rem 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 50px;
+            background-color: var(--accent);
+        }
+
+        .features-box {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .feature {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .feature:last-child {
+            border-bottom: none;
+        }
+
+        .checkmark {
+            color: var(--success);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-desc {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .cta-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 1.5rem 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 35, 126, 0.4);
+        }
+
+        .cta-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 1rem;
+            color: #666;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #e5e7eb;
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .guarantee {
+            text-align: center;
+            padding: 1.5rem;
+            background: #fff8e1;
+            border-radius: 10px;
+            border: 2px solid var(--warning);
+        }
+
+        .guarantee-text {
+            font-size: 0.95rem;
+            color: #92400e;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: #e8f5e9;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            margin: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .trust-badge i {
+            color: var(--success);
+            font-size: 1.2rem;
+            margin-right: 0.6rem;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .back-link a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .price {
+                font-size: 3rem;
+            }
+
+            .content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Upgrade to Pro</h1>
+            <p class="subtitle">Stop AI from training on YOUR confidential data</p>
+            <div class="price">$4.99</div>
+            <p class="price-period">One-time payment • Lifetime access</p>
+        </div>
+
+        <div class="content">
+            <h2>Protect Your Privacy from AI Training:</h2>
+            
+            <div class="features-box">
+                <div class="feature">
+                    <div class="checkmark">✓</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Unlimited Characters</div>
+                        <div class="feature-desc">No more 5,000 character limit - protect documents of any size</div>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="checkmark">✓</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Company Name Protection</div>
+                        <div class="feature-desc">Automatically detect and anonymize business entities</div>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="checkmark">✓</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Account Number Security</div>
+                        <div class="feature-desc">Protect financial and account information from AI training</div>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="checkmark">✓</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Auto-Save Feature</div>
+                        <div class="feature-desc">Never lose your work - automatic input saving</div>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="checkmark">✓</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Priority Support</div>
+                        <div class="feature-desc">Get help faster from LucariTech cybersecurity experts</div>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="checkmark">✓</div>
+                    <div class="feature-text">
+                        <div class="feature-title">Lifetime Updates</div>
+                        <div class="feature-desc">All future features and security improvements included</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="cta-button" onclick="upgradeToPro()">
+                Upgrade Now - $4.99
+            </button>
+
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Redirecting to secure payment...</p>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <div class="trust-badge">
+                    <i class="fas fa-lock"></i>
+                    <span><strong>Secure Payment</strong> powered by Stripe</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span><strong>By LucariTech</strong> - Trusted cybersecurity experts</span>
+                </div>
+            </div>
+
+            <div class="guarantee">
+                <div class="guarantee-text">
+                    💯 <strong>100% Satisfaction Guarantee</strong><br>
+                    Contact support@lucaritech.com if you have any issues
+                </div>
+            </div>
+
+            <div class="back-link">
+                <a href="/safepaste">← Back to SafePaste AI</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function upgradeToPro() {
+            const button = document.querySelector('.cta-button');
+            const loading = document.querySelector('.loading');
+            
+            button.disabled = true;
+            button.textContent = 'Processing...';
+            loading.style.display = 'block';
+
+            try {
+                // Generate a user ID (in production, this comes from your extension)
+                const userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                
+                // Call your backend to create checkout session
+                const response = await fetch('/api/create-checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ userId })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to create checkout session');
+                }
+
+                const { url } = await response.json();
+                
+                // Redirect to Stripe Checkout
+                window.location.href = url;
+
+            } catch (error) {
+                console.error('Payment error:', error);
+                alert('Payment initialization failed. Please try again or contact support@lucaritech.com');
+                button.disabled = false;
+                button.textContent = 'Upgrade Now - $4.99';
+                loading.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
