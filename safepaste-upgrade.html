@@ -221,6 +221,16 @@
             text-decoration: underline;
         }
 
+        .error-message {
+            display: none;
+            background: #fee;
+            border: 1px solid #fcc;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #c00;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
@@ -299,6 +309,8 @@
                 </div>
             </div>
 
+            <div id="error-message" class="error-message"></div>
+
             <button class="cta-button" onclick="upgradeToPro()">
                 Upgrade Now - $4.99
             </button>
@@ -333,37 +345,81 @@
     </div>
 
     <script>
+        // ⚠️ TODO: REPLACE THIS WITH YOUR VERCEL URL
+        // After deploying to Vercel, you'll get a URL like:
+        // https://safepaste-backend-abc123.vercel.app
+        // 
+        // Replace the line below:
+        const BACKEND_URL = 'https://safepaste-backend.vercel.app';  // ← CHANGE THIS!
+        
+        // Example (after you deploy):
+        // const BACKEND_URL = 'https://safepaste-backend-abc123.vercel.app';
+
         async function upgradeToPro() {
             const button = document.querySelector('.cta-button');
             const loading = document.querySelector('.loading');
+            const errorDiv = document.getElementById('error-message');
             
             button.disabled = true;
             button.textContent = 'Processing...';
             loading.style.display = 'block';
+            errorDiv.style.display = 'none';
+
+            // Check if backend URL is configured
+            if (BACKEND_URL === 'https://safepaste-backend.vercel.app') {
+                errorDiv.textContent = '⚠️ Backend not configured yet. Please deploy the Stripe backend to Vercel first.';
+                errorDiv.style.display = 'block';
+                button.disabled = false;
+                button.textContent = 'Upgrade Now - $4.99';
+                loading.style.display = 'none';
+                return;
+            }
 
             try {
-                // Generate a user ID (in production, this comes from your extension)
                 const userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
                 
-                // Call your backend to create checkout session
-                const response = await fetch('/api/create-checkout', {
+                console.log('Calling backend:', BACKEND_URL + '/api/create-checkout');
+                
+                const response = await fetch(BACKEND_URL + '/api/create-checkout', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 
+                        'Content-Type': 'application/json'
+                    },
                     body: JSON.stringify({ userId })
                 });
 
                 if (!response.ok) {
-                    throw new Error('Failed to create checkout session');
+                    const errorData = await response.json().catch(() => ({}));
+                    throw new Error(errorData.error || `HTTP ${response.status}: ${response.statusText}`);
                 }
 
                 const { url } = await response.json();
+                
+                if (!url) {
+                    throw new Error('No checkout URL received from server');
+                }
                 
                 // Redirect to Stripe Checkout
                 window.location.href = url;
 
             } catch (error) {
                 console.error('Payment error:', error);
-                alert('Payment initialization failed. Please try again or contact support@lucaritech.com');
+                
+                let errorMessage = 'Payment initialization failed. ';
+                
+                if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                    errorMessage += 'Could not connect to payment server. Please check your internet connection.';
+                } else if (error.message.includes('405')) {
+                    errorMessage += 'Backend API not properly configured. Make sure you deployed to Vercel and updated the BACKEND_URL.';
+                } else {
+                    errorMessage += error.message;
+                }
+                
+                errorMessage += ' Contact support@lucaritech.com for help.';
+                
+                errorDiv.textContent = errorMessage;
+                errorDiv.style.display = 'block';
+                
                 button.disabled = false;
                 button.textContent = 'Upgrade Now - $4.99';
                 loading.style.display = 'none';
