@@ -63,33 +63,50 @@
             margin-bottom: 2rem;
         }
 
-        .details {
+        .status-box {
             background: #f0fdf4;
             border: 2px solid #86efac;
             border-radius: 15px;
             padding: 2rem;
             margin: 2rem 0;
-            text-align: left;
         }
 
-        .detail-row {
+        .status-item {
             display: flex;
             justify-content: space-between;
             padding: 1rem 0;
             border-bottom: 1px solid #bbf7d0;
         }
 
-        .detail-row:last-child {
+        .status-item:last-child {
             border-bottom: none;
         }
 
-        .detail-label {
+        .status-label {
             font-weight: 600;
             color: #374151;
         }
 
-        .detail-value {
+        .status-value {
             color: #6b7280;
+        }
+
+        .extension-status {
+            background: #dbeafe;
+            border: 2px solid #93c5fd;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .extension-status.success {
+            background: #dcfce7;
+            border-color: #86efac;
+        }
+
+        .extension-status.pending {
+            background: #fef3c7;
+            border-color: #fcd34d;
         }
 
         .next-steps {
@@ -143,6 +160,8 @@
             cursor: pointer;
             margin-top: 1.5rem;
             transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .cta-button:hover {
@@ -187,22 +206,29 @@
         <h1>Welcome to SafePaste AI Pro!</h1>
         <p class="subtitle">Your payment was successful</p>
 
-        <div class="details">
-            <div class="detail-row">
-                <div class="detail-label">Status</div>
-                <div class="detail-value" style="color: #10b981; font-weight: 600;">✓ Payment Confirmed</div>
+        <div class="status-box">
+            <div class="status-item">
+                <div class="status-label">Status</div>
+                <div class="status-value" style="color: #10b981; font-weight: 600;">✓ Payment Confirmed</div>
             </div>
-            <div class="detail-row">
-                <div class="detail-label">Amount Paid</div>
-                <div class="detail-value">$4.99 USD</div>
+            <div class="status-item">
+                <div class="status-label">Amount Paid</div>
+                <div class="status-value">$4.99 USD</div>
             </div>
-            <div class="detail-row">
-                <div class="detail-label">Access Level</div>
-                <div class="detail-value">Lifetime Pro - By LucariTech</div>
+            <div class="status-item">
+                <div class="status-label">Access Level</div>
+                <div class="status-value">Lifetime Pro - By LucariTech</div>
             </div>
-            <div class="detail-row">
-                <div class="detail-label">Transaction ID</div>
-                <div class="detail-value" id="session-id">Loading...</div>
+            <div class="status-item">
+                <div class="status-label">Transaction ID</div>
+                <div class="status-value" id="session-id">Loading...</div>
+            </div>
+        </div>
+
+        <div class="extension-status" id="extension-status">
+            <div id="extension-status-text">
+                <strong>Activating your Pro features...</strong>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Please wait while we activate Pro in your extension.</p>
             </div>
         </div>
 
@@ -210,15 +236,15 @@
             <h3>Next Steps:</h3>
             <div class="step">
                 <div class="step-number">1</div>
-                <div class="step-text">Close this page and return to SafePaste AI</div>
+                <div class="step-text"><strong>Open SafePaste AI extension</strong> - Click the extension icon in your browser</div>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
-                <div class="step-text">Your Pro features are now active - unlimited anonymization!</div>
+                <div class="step-text"><strong>See "✨ PRO" badge</strong> - Your Pro features are now active!</div>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
-                <div class="step-text">Safely use ChatGPT, Claude, and any AI without exposing your data</div>
+                <div class="step-text"><strong>Enjoy unlimited anonymization</strong> - Safely use ChatGPT, Claude, and any AI without exposing your data</div>
             </div>
         </div>
 
@@ -232,19 +258,153 @@
     </div>
 
     <script>
-        // Get session ID from URL
+        // ====================================================================
+        // EXTENSION ACTIVATION SCRIPT
+        // ====================================================================
+        
+        const EXTENSION_ID = 'eipiahmjhofjjgdiipnlkpnclfalbgme'; // TODO: Replace with actual extension ID
+        
+        // Get data from URL and localStorage
         const urlParams = new URLSearchParams(window.location.search);
         const sessionId = urlParams.get('session_id');
+        let userId = localStorage.getItem('safepaste_userId');
         
+        // Display session ID
         if (sessionId) {
             document.getElementById('session-id').textContent = sessionId.substring(0, 20) + '...';
-            console.log('Payment verified:', sessionId);
         } else {
             document.getElementById('session-id').textContent = 'N/A';
         }
-
-        // Auto-close after 30 seconds (optional)
-        // setTimeout(() => window.close(), 30000);
+        
+        // ====================================================================
+        // TRY TO ACTIVATE EXTENSION
+        // ====================================================================
+        
+        async function activateExtension() {
+            console.log('[SafePaste Success] Attempting to activate extension...', { userId, sessionId });
+            
+            // Method 1: Try Chrome extension messaging (most reliable)
+            if (window.chrome && chrome.runtime && EXTENSION_ID !== 'YOUR_EXTENSION_ID_HERE') {
+                try {
+                    chrome.runtime.sendMessage(EXTENSION_ID, {
+                        type: 'PRO_ACTIVATED',
+                        userId: userId,
+                        sessionId: sessionId,
+                        timestamp: Date.now()
+                    }, function(response) {
+                        if (chrome.runtime.lastError) {
+                            console.log('[SafePaste Success] Extension not found or not listening:', chrome.runtime.lastError);
+                            showExtensionNotFound();
+                        } else {
+                            console.log('[SafePaste Success] Extension notified successfully:', response);
+                            showExtensionActivated();
+                        }
+                    });
+                    
+                    return; // Success!
+                    
+                } catch (error) {
+                    console.error('[SafePaste Success] Error sending message to extension:', error);
+                }
+            }
+            
+            // Method 2: Window postMessage (fallback)
+            try {
+                window.postMessage({
+                    type: 'SAFEPASTE_PRO_ACTIVATED',
+                    userId: userId,
+                    sessionId: sessionId,
+                    source: 'lucaritech-success-page'
+                }, '*');
+                
+                console.log('[SafePaste Success] PostMessage sent');
+                
+            } catch (error) {
+                console.error('[SafePaste Success] Error with postMessage:', error);
+            }
+            
+            // If we got here, show manual instructions
+            setTimeout(() => {
+                if (!document.getElementById('extension-status').classList.contains('success')) {
+                    showManualActivation();
+                }
+            }, 2000);
+        }
+        
+        // ====================================================================
+        // UI UPDATE FUNCTIONS
+        // ====================================================================
+        
+        function showExtensionActivated() {
+            const statusBox = document.getElementById('extension-status');
+            const statusText = document.getElementById('extension-status-text');
+            
+            statusBox.classList.add('success');
+            statusText.innerHTML = `
+                <strong>✓ Pro Features Activated!</strong>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">
+                    Your extension has been automatically upgraded to Pro. Open the extension to see your new features!
+                </p>
+            `;
+        }
+        
+        function showExtensionNotFound() {
+            const statusBox = document.getElementById('extension-status');
+            const statusText = document.getElementById('extension-status-text');
+            
+            statusBox.classList.add('pending');
+            statusText.innerHTML = `
+                <strong>⚠️ Extension Not Detected</strong>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">
+                    Make sure the SafePaste AI extension is installed and enabled. Then click "Verify Pro Status" in the extension.
+                </p>
+            `;
+        }
+        
+        function showManualActivation() {
+            const statusBox = document.getElementById('extension-status');
+            const statusText = document.getElementById('extension-status-text');
+            
+            statusBox.classList.add('pending');
+            statusText.innerHTML = `
+                <strong>Manual Activation Needed</strong>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">
+                    Open your SafePaste AI extension and click the <strong>"Just Upgraded? Click to Verify Pro Status"</strong> button.
+                </p>
+            `;
+        }
+        
+        // ====================================================================
+        // RUN ACTIVATION ON PAGE LOAD
+        // ====================================================================
+        
+        if (userId && sessionId) {
+            activateExtension();
+        } else {
+            console.warn('[SafePaste Success] Missing userId or sessionId');
+            showManualActivation();
+        }
+        
+        // ====================================================================
+        // CLEANUP
+        // ====================================================================
+        
+        // Clear userId from localStorage after 5 minutes (security)
+        setTimeout(() => {
+            localStorage.removeItem('safepaste_userId');
+            console.log('[SafePaste Success] Cleared userId from localStorage');
+        }, 5 * 60 * 1000);
+        
+        // ====================================================================
+        // ANALYTICS (OPTIONAL)
+        // ====================================================================
+        
+        // Track successful payment (add your analytics here)
+        console.log('[SafePaste Success] Payment successful:', {
+            sessionId: sessionId,
+            timestamp: new Date().toISOString()
+        });
+        
     </script>
 </body>
 </html>

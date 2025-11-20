@@ -145,7 +145,7 @@
             margin: 1.5rem 0;
         }
 
-        .cta-button:hover {
+        .cta-button:hover:not(:disabled) {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(26, 35, 126, 0.4);
         }
@@ -345,12 +345,15 @@
     </div>
 
     <script>
-        // ⚠️ TODO: REPLACE THIS WITH YOUR VERCEL URL
-        // After deploying to Vercel, you'll get a URL like:
-        // https://safepaste-backend-abc123.vercel.app
-        // 
-        // Replace the line below:
-        const BACKEND_URL = 'https://safepaste-backend-plzdwx901-petros-khachatrians-projects.vercel.app';  // ← CHANGE THIS!
+        // ====================================================================
+        // CONFIGURATION
+        // ====================================================================
+        
+        const BACKEND_URL = 'https://safepaste-backend-plzdwx901-petros-khachatrians-projects.vercel.app';
+        
+        // ====================================================================
+        // UPGRADE FUNCTION
+        // ====================================================================
         
         async function upgradeToPro() {
             const button = document.querySelector('.cta-button');
@@ -362,20 +365,24 @@
             loading.style.display = 'block';
             errorDiv.style.display = 'none';
 
-            // Check if backend URL is configured
-            if (BACKEND_URL === 'https://safepaste-backend.vercel.app') {
-                errorDiv.textContent = '⚠️ Backend not configured yet. Please deploy the Stripe backend to Vercel first.';
-                errorDiv.style.display = 'block';
-                button.disabled = false;
-                button.textContent = 'Upgrade Now - $4.99';
-                loading.style.display = 'none';
-                return;
-            }
-
             try {
-                const userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                // Get userId from URL parameter (passed from extension)
+                const urlParams = new URLSearchParams(window.location.search);
+                let userId = urlParams.get('userId');
                 
-                console.log('Calling backend:', BACKEND_URL + '/api/create-checkout');
+                // If no userId in URL, generate a new one
+                if (!userId) {
+                    userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                    console.log('[SafePaste] Generated new userId:', userId);
+                }
+                
+                console.log('[SafePaste] Using userId:', userId);
+                
+                // Store userId in localStorage so success page can access it
+                localStorage.setItem('safepaste_userId', userId);
+                
+                // Call backend to create Stripe checkout session
+                console.log('[SafePaste] Calling backend:', BACKEND_URL + '/api/create-checkout');
                 
                 const response = await fetch(BACKEND_URL + '/api/create-checkout', {
                     method: 'POST',
@@ -396,18 +403,22 @@
                     throw new Error('No checkout URL received from server');
                 }
                 
+                console.log('[SafePaste] Redirecting to Stripe checkout...');
+                
                 // Redirect to Stripe Checkout
                 window.location.href = url;
 
             } catch (error) {
-                console.error('Payment error:', error);
+                console.error('[SafePaste] Payment error:', error);
                 
                 let errorMessage = 'Payment initialization failed. ';
                 
                 if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
                     errorMessage += 'Could not connect to payment server. Please check your internet connection.';
                 } else if (error.message.includes('405')) {
-                    errorMessage += 'Backend API not properly configured. Make sure you deployed to Vercel and updated the BACKEND_URL.';
+                    errorMessage += 'Payment system configuration error. Please contact support.';
+                } else if (error.message.includes('Server configuration error')) {
+                    errorMessage += 'Payment system is being configured. Please try again in a few minutes.';
                 } else {
                     errorMessage += error.message;
                 }
@@ -421,6 +432,19 @@
                 button.textContent = 'Upgrade Now - $4.99';
                 loading.style.display = 'none';
             }
+        }
+        
+        // ====================================================================
+        // DISPLAY USER ID (DEBUG)
+        // ====================================================================
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('userId');
+        
+        if (userId) {
+            console.log('[SafePaste] User ID from URL:', userId);
+        } else {
+            console.log('[SafePaste] No user ID in URL - will generate new one');
         }
     </script>
 </body>
